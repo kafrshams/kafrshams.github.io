@@ -195,7 +195,7 @@
             vertical-align: middle;
         }
 
-        /* NAVBAR WITH LOGO STYLING */
+        /* NAVBAR STYLING & MOBILE FIX */
         .navbar {
             position: fixed;
             top: 0;
@@ -213,20 +213,21 @@
             align-items: center;
             justify-content: space-between;
             height: 85px;
+            padding: 0 15px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.4rem;
+            gap: 10px;
+            font-size: 1.25rem;
             font-weight: 900;
             color: var(--primary);
         }
 
         .site-logo-img {
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--secondary);
@@ -236,12 +237,13 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         .nav-links a {
             font-weight: 600;
             color: var(--text-main);
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -251,28 +253,33 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-
-        /* TOP HEADER SOCIAL ICONS */
-        .top-social-icons {
-            display: flex;
-            align-items: center;
             gap: 8px;
         }
 
+        /* TOP HEADER OFFICIAL SOCIAL ICONS */
+        .top-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .top-social-btn {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: var(--primary-light);
             color: var(--primary);
-            font-size: 0.9rem;
             transition: var(--transition);
             border: 1px solid var(--border-color);
+        }
+
+        .top-social-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         .top-social-btn:hover {
@@ -286,7 +293,7 @@
             border: none;
             color: var(--text-main);
             cursor: pointer;
-            padding: 8px;
+            padding: 6px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -303,8 +310,9 @@
             background: none;
             border: none;
             color: var(--text-main);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
+            padding: 4px;
         }
 
         /* HERO SECTION */
@@ -636,7 +644,7 @@
             transform: scale(1.05);
         }
 
-        /* MAP SECTION STYLING (UPDATED WITH LOCAL MAP ZOOM) */
+        /* MAP SECTION STYLING (UPDATED WITH KAFR SHAMS ZOOM IMAGE) */
         .map-section {
             background-color: var(--primary-light);
             text-align: center;
@@ -950,7 +958,7 @@
             visibility: visible;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE FIXES FOR MOBILE */
         @media (max-width: 992px) {
             .hero-grid, .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
@@ -994,6 +1002,16 @@
                 bottom: 25px;
                 right: 20px;
             }
+            .navbar .container {
+                padding: 0 10px;
+            }
+            .nav-actions {
+                gap: 4px;
+            }
+            .btn-primary {
+                padding: 6px 12px !important;
+                font-size: 0.8rem !important;
+            }
         }
     </style>
 </head>
@@ -1005,7 +1023,7 @@
         <span>تواصل مع مسؤول الإعلانات</span>
     </a>
 
-    <!-- 1. NAVBAR WITH REAL LOGO AND TOP SOCIAL ICONS -->
+    <!-- 1. NAVBAR WITH LOGO AND OFFICIAL TOP SOCIAL ICONS -->
     <header class="navbar">
         <div class="container">
             <a href="#" class="logo">
@@ -1024,16 +1042,22 @@
                 </ul>
             </nav>
             <div class="nav-actions">
-                <!-- Top Header Social Icons -->
+                <!-- Top Header Official Social Icons (SVG Logos) -->
                 <div class="top-social-icons">
-                    <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" title="فيسبوك">📘</a>
-                    <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" title="انستجرام">📷</a>
-                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" title="قناة الواتساب">💬</a>
+                    <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" aria-label="فيسبوك">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" aria-label="انستجرام">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" aria-label="قناة الواتساب">
+                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
+                    </a>
                 </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-1.16 1.76-3.12 2.92-5.36 2.92-3.58 0-6.5-2.92-6.5-6.5 0-2.24 1.16-4.2 2.92-5.36-.44-.06-.9-.1-1.36-.1z"/></svg>
                 </button>
-                <a href="#contact" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">أعلن معنا</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem; white-space: nowrap;">أعلن معنا</a>
                 <button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
             </div>
         </div>
@@ -1057,7 +1081,7 @@
                             <svg class="icon" style="width:40px;height:40px" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         </div>
                         <h3>خدمة الإعلانات والتهاني</h3>
-                        <p>نصل بأخباركم وإعلاناتكم التجارية إلى أهالي البلدة والمغتربين.</p>
+                        <p>نصل بأخباركم وإعلاناتكم التجارية لأكثر من 65,000 متابع من أهالي البلدة والمغتربين.</p>
                     </div>
                 </div>
             </div>
@@ -1160,7 +1184,7 @@
             </div>
         </section>
 
-        <!-- 5. INTERACTIVE MAP SECTION (UPDATED WITH REGIONAL MAP ZOOM ON KAFR SHAMS) -->
+        <!-- 5. INTERACTIVE MAP SECTION (UPDATED WITH DETAILED KAFR SHAMS MAP ZOOM) -->
         <section id="map-section" class="section-padding map-section">
             <div class="container">
                 <div class="section-header">
@@ -1169,7 +1193,7 @@
                 </div>
                 <div class="map-card-container">
                     <a href="https://maps.google.com/?q=Kafr+Shams,+Syria" target="_blank" class="circular-map-preview" aria-label="خريطة موقع كفرشمس">
-                        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80" alt="خريطة منطقة كفرشمس">
+                        <img src="https://i.ibb.co/hRypwShC/484649414-1048412620642192-924841885796921824-n.jpg" alt="خريطة تقريبية لكفرشمس">
                     </a>
                     <h3 style="color: var(--primary); font-size: 1.3rem;">سوريا - درعا - كفرشمس</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">هل أنت خارج البلدة؟ اضغط على الزر أدناه لمعرفة الاتجاهات وحساب مسافة الطريق الحالية إلينا عبر خرائط جوجل.</p>
