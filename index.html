@@ -1286,13 +1286,13 @@
                             <textarea id="message" rows="5" class="form-control" placeholder="اكتب تفاصيل إعلانك هنا..." required></textarea>
                         </div>
 
-                        <!-- خانة إرفاق الصور والفيديوهات الجديدة -->
+                        <!-- خانة إرفاق الصور والفيديوهات -->
                         <div class="form-group">
                             <label for="mediaFile">إرفاق صورة أو فيديو (اختياري)</label>
-                            <input type="file" id="mediaFile" class="form-control" accept="image/*,video/*">
+                            <input type="file" id="mediaFile" class="form-control" accept="image/*,video/*" style="padding: 10px;">
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الإعلان الآن</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">إرسال الإعلان الآن</button>
                     </form>
                 </div>
             </div>
@@ -1316,7 +1316,7 @@
             </div>
 
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2026 - منصة كفرشمس الآن</p>
+                <p>جميع الحقوق محفوظة © 2026 - منصة كفرشمس الآن</p>
             </div>
         </div>
     </footer>
@@ -1326,8 +1326,12 @@
         <svg class="icon" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
 
-    <!-- JAVASCRIPT: INTEGRATED WITH MAKE.COM WEBHOOK -->
+    <!-- JAVASCRIPT: CLOUDINARY & MAKE.COM WEBHOOK INTEGRATION -->
     <script>
+        const WEBHOOK_URL = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
+        const CLOUD_NAME = 'lqibffwn';
+        const UPLOAD_PRESET = 'kafrshams_ads';
+
         // FAQ Accordion Toggle
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
@@ -1363,44 +1367,77 @@
             });
         }
 
-        // Direct Integration with Make.com Webhook including Media Files
+        // Form Submission with Cloudinary Integration
         const contactForm = document.getElementById('contactForm');
         const alertsSuccess = document.getElementById('alertsSuccess');
+        const submitBtn = document.getElementById('submitBtn');
 
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const formData = new FormData();
-            formData.append('name', document.getElementById('name').value);
-            formData.append('phone', document.getElementById('phone').value);
-            formData.append('serviceType', document.getElementById('serviceType').value);
-            formData.append('message', document.getElementById('message').value);
-            
-            const mediaFile = document.getElementById('mediaFile').files[0];
-            if (mediaFile) {
-                formData.append('mediaFile', mediaFile);
-            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'جاري رفع الملفات إلى السحابة...';
+            alertsSuccess.style.display = 'none';
 
             try {
-                const webhookUrl = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
-                
-                const response = await fetch(webhookUrl, {
+                let mediaUrl = '';
+                const mediaFileInput = document.getElementById('mediaFile');
+
+                // إذا تم اختيار ملف (صورة أو فيديو)، يتم رفعه إلى Cloudinary أولاً
+                if (mediaFileInput.files.length > 0) {
+                    const file = mediaFileInput.files[0];
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('upload_preset', UPLOAD_PRESET);
+
+                    // تحديد ما إذا كان الملف صورة أو فيديو لتوجيهه للرابط الصحيح في السحابة
+                    const resourceType = file.type.startsWith('video') ? 'video' : 'image';
+
+                    const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/${resourceType}/upload`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const uploadData = await uploadRes.json();
+                    if (uploadData.secure_url) {
+                        mediaUrl = uploadData.secure_url;
+                    }
+                }
+
+                // تجهيز البيانات وإرسال الروابط النصية الخفيفة فقط للويب هوك (حل مشكلة 1MB و 413)
+                const payload = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    serviceType: document.getElementById('serviceType').value,
+                    message: document.getElementById('message').value,
+                    mediaUrl: mediaUrl // رابط الملف النصي النظيف
+                };
+
+                const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
                 });
 
                 if (response.ok) {
                     alertsSuccess.style.display = 'block';
                     contactForm.reset();
+                    alertsSuccess.scrollIntoView({ behavior: 'smooth' });
                     setTimeout(() => {
                         alertsSuccess.style.display = 'none';
-                    }, 4000);
+                    }, 5000);
                 } else {
-                    alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
+                    alert('حدث خطأ أثناء إرسال البيانات، يرجى المحاولة مرة أخرى.');
                 }
+
             } catch (error) {
                 console.error('Error:', error);
-                alert('تعذر الاتصال بالخادم، يرجى التحقق من الاتصال.');
+                alert('تعذر الاتصال بالخادم أو رفع الملف، يرجى التحقق من اتصال الإنترنت.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'إرسال الإعلان الآن';
             }
         });
     </script>
