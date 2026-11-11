@@ -1286,6 +1286,12 @@
                             <textarea id="message" rows="5" class="form-control" placeholder="اكتب تفاصيل إعلانك هنا..." required></textarea>
                         </div>
 
+                        <!-- خانة إرفاق الصور والفيديوهات الجديدة -->
+                        <div class="form-group">
+                            <label for="mediaFile">إرفاق صورة أو فيديو (اختياري)</label>
+                            <input type="file" id="mediaFile" class="form-control" accept="image/*,video/*">
+                        </div>
+
                         <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الإعلان الآن</button>
                     </form>
                 </div>
@@ -1357,29 +1363,30 @@
             });
         }
 
-        // Direct Integration with Make.com Webhook for Kafrshams Now
+        // Direct Integration with Make.com Webhook including Media Files
         const contactForm = document.getElementById('contactForm');
         const alertsSuccess = document.getElementById('alertsSuccess');
 
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                serviceType: document.getElementById('serviceType').value,
-                message: document.getElementById('message').value
-            };
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('phone', document.getElementById('phone').value);
+            formData.append('serviceType', document.getElementById('serviceType').value);
+            formData.append('message', document.getElementById('message').value);
+            
+            const mediaFile = document.getElementById('mediaFile').files[0];
+            if (mediaFile) {
+                formData.append('mediaFile', mediaFile);
+            }
 
             try {
                 const webhookUrl = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
                 
                 const response = await fetch(webhookUrl, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+                    body: formData
                 });
 
                 if (response.ok) {
@@ -1393,7 +1400,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('تعذر الاتصال الخادمي، يرجى التحقق من الاتصال.');
+                alert('تعذر الاتصال بالخادم، يرجى التحقق من الاتصال.');
             }
         });
     </script>
