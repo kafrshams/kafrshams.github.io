@@ -195,7 +195,7 @@
             vertical-align: middle;
         }
 
-        /* NAVBAR STYLING & MOBILE FIX */
+        /* NAVBAR STYLING */
         .navbar {
             position: fixed;
             top: 0;
@@ -256,7 +256,6 @@
             gap: 8px;
         }
 
-        /* TOP HEADER OFFICIAL SOCIAL ICONS */
         .top-social-icons {
             display: flex;
             align-items: center;
@@ -286,33 +285,6 @@
             background-color: var(--primary);
             color: #FFFFFF;
             transform: translateY(-2px);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            padding: 6px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--border-color);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.6rem;
-            cursor: pointer;
-            padding: 4px;
         }
 
         /* HERO SECTION */
@@ -392,375 +364,8 @@
             color: var(--text-muted);
         }
 
-        /* ABOUT SECTION & HISTORY */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 50px;
-        }
-
-        .about-card-box {
-            background-color: var(--bg-card);
-            padding: 35px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            height: 100%;
-        }
-
-        .about-card-box h3 {
-            font-size: 1.7rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .about-card-box p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .history-highlights {
-            background-color: var(--primary-light);
-            border-right: 4px solid var(--secondary);
-            padding: 20px;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin-top: 20px;
-        }
-
-        .history-highlights h4 {
-            color: var(--primary);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-
-        .history-highlights p {
-            color: var(--text-main);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat-card {
-            background-color: var(--bg-card);
-            padding: 30px 20px;
-            border-radius: var(--radius-md);
-            text-align: center;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stat-number {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 5px;
-            direction: ltr;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        /* SERVICES SECTION */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 35px 25px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* WHY US */
-        .why-us {
-            background-color: var(--primary-light);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .feature-item {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .feature-icon-wrapper {
-            width: 75px;
-            height: 75px;
-            background: var(--primary);
-            color: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-        }
-
-        .feature-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .feature-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* PORTFOLIO & GALLERY */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .portfolio-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .portfolio-thumb {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFFFFF;
-            font-size: 3.5rem;
-        }
-
-        .portfolio-body {
-            padding: 25px;
-        }
-
-        .portfolio-tag {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 4px 14px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
-
-        .portfolio-body h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .portfolio-body p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .gallery-item {
-            height: 200px;
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* MAP SECTION STYLING */
-        .map-section {
-            background-color: var(--primary-light);
-            text-align: center;
-        }
-
-        .map-card-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .circular-map-preview {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid var(--secondary);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-            display: block;
-        }
-
-        .circular-map-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .circular-map-preview:hover img {
-            transform: scale(1.1);
-        }
-
-        .circular-map-preview::after {
-            content: 'انقر لتحديد الاتجاهات';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(27, 77, 62, 0.85);
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 0;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .circular-map-preview:hover::after {
-            opacity: 1;
-        }
-
-        /* FAQ ACCORDION */
-        .faq-accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .faq-header {
-            width: 100%;
-            padding: 20px 25px;
-            background: none;
-            border: none;
-            text-align: right;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-main);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-            color: var(--primary);
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0 25px;
-            color: var(--text-muted);
-        }
-
-        .faq-item.active .faq-content {
-            padding: 0 25px 25px 25px;
-            max-height: 250px;
-        }
-
-        /* CONTACT SECTION */
-        .contact-grid {
+        /* ABOUT & SERVICES & CONTACT */
+        .about-grid, .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -799,13 +404,6 @@
             justify-content: center;
             color: var(--secondary);
             flex-shrink: 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .contact-detail-icon:hover {
-            background: var(--secondary);
-            color: var(--primary);
         }
 
         .social-links-box {
@@ -832,7 +430,6 @@
         .social-btn:hover {
             background: var(--secondary);
             color: var(--primary);
-            border-color: var(--secondary);
         }
 
         .contact-form-card {
@@ -883,7 +480,6 @@
             font-weight: 700;
         }
 
-        /* FLOATING WHATSAPP BUTTON */
         .whatsapp-float {
             position: fixed;
             bottom: 35px;
@@ -896,7 +492,6 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            font-size: 1rem;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 999;
             transition: var(--transition);
@@ -905,23 +500,13 @@
         .whatsapp-float:hover {
             background-color: #1EBE5D;
             transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
-            color: #FFFFFF;
         }
 
-        /* FOOTER */
         .footer {
             background-color: var(--bg-card);
             border-top: 1px solid var(--border-color);
             padding: 60px 0 25px 0;
             text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 25px 0;
         }
 
         .copyright {
@@ -932,85 +517,9 @@
             margin-top: 25px;
         }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 48px;
-            height: 48px;
-            background-color: var(--primary);
-            color: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            box-shadow: var(--shadow-md);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 99;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* RESPONSIVE FIXES */
         @media (max-width: 992px) {
             .hero-grid, .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .nav-links {
-                position: fixed;
-                top: 85px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 85px);
-                background-color: var(--bg-card);
-                flex-direction: column;
-                padding: 40px;
-                transition: 0.3s ease;
-                box-shadow: var(--shadow-lg);
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-            .whatsapp-float span {
-                display: none;
-            }
-            .whatsapp-float {
-                padding: 14px;
-                border-radius: 50%;
-                bottom: 25px;
-                right: 20px;
-            }
-            .navbar .container {
-                padding: 0 10px;
-            }
-            .nav-actions {
-                gap: 4px;
-            }
-            .btn-primary {
-                padding: 6px 12px !important;
-                font-size: 0.8rem !important;
             }
         }
     </style>
@@ -1031,26 +540,16 @@
                 <span>كفرشمس الآن</span>
             </a>
             <nav>
-                <ul class="nav-links" id="navLinks">
+                <ul class="nav-links">
                     <li><a href="#hero">الرئيسية</a></li>
-                    <li><a href="#about">عن كفرشمس والتاريخ</a></li>
                     <li><a href="#services">خدمات الإعلانات</a></li>
-                    <li><a href="#map-section">موقع البلدة</a></li>
-                    <li><a href="#portfolio">الأعمال والمعرض</a></li>
-                    <li><a href="#faq">الأسئلة الشائعة</a></li>
-                    <li><a href="#contact">التواصل</a></li>
+                    <li><a href="#contact">أرسل إعلانك</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
                 <div class="top-social-icons">
                     <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" aria-label="فيسبوك">
                         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" aria-label="انستجرام">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" aria-label="قناة الواتساب">
-                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
                     </a>
                 </div>
             </div>
@@ -1062,237 +561,84 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>منصة كفرشمس الآن <span>نبض بلدتنا وكل أخبارها</span></h1>
-                    <p>التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة بكل احترافية.</p>
+                    <h1>منصة كفرشمس الآن <span>أخبار وخدمات البلدة بمتناول يدك</span></h1>
+                    <p>التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة بكل سهولة واحترافية.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">أرسل إعلانك الآن</a>
-                        <a href="#about" class="btn btn-secondary">تعرف علينا</a>
+                        <a href="#contact" class="btn btn-primary">أضف إعلانك الآن</a>
                     </div>
                 </div>
                 <div class="hero-card">
                     <div class="hero-card-icon">
-                        <svg class="icon" style="width:40px;height:40px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-5h2v5h-2zm0-7v-2h2v2h-2z"/></svg>
+                        <svg class="icon" style="width:40px;height:40px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.03-.42 1.98-1.07 2.75z"/></svg>
                     </div>
-                    <h3>خدمة الإعلانات التلقائية</h3>
-                    <p>أرسل طلبك مباشرة من الموقع وسيتم جدولته ومراجعته ونشره أوتوماتيكياً عبر صفحتنا الرسمية.</p>
+                    <h3>خدمة الإعلانات الذكية</h3>
+                    <p>أرسل إعلانك التجاري أو الاجتماعي مع الصور والفيديو وسيرسل تلقائياً للموافقة والنشر الفوري.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>عن كفرشمس والتاريخ</h2>
-                <p>تعرف على جذور بلدتنا الأصيلة ومسيرتنا في خدمة الأهل</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card-box">
-                    <h3>🏛️ مدينة كفرشمس العريقة</h3>
-                    <p>تعتبر كفرشمس إحدى أهم البلدات في منطقة حوران بريف درعا السوري، وتتميز بتاريخها العريق الممتد عبر العصور، وأرضها الطيبة المعطاءة، وأبنائها الأوفياء الذين ضربوا أروع أمثلة التلاحم والكرم.</p>
-                    <p>تتميز بموقع استراتيجي وتنوع ثقافي واجتماعي غني يجعلها نبضاً حقيقياً للمنطقة.</p>
-                </div>
-                <div class="about-card-box">
-                    <h3>💡 رؤية منصة "كفرشمس الآن"</h3>
-                    <p>انطلقت المنصة لتكون النافذة الإعلامية والخدمية الأولى لأهالي البلدة، بهدف توثيق الأخبار المحلية، ونسج روابط التواصل الاجتماعي، ومساندة التجار وأصحاب الأعمال في الترويج لخدماتهم.</p>
-                    <div class="history-highlights">
-                        <h4>🎯 هدفنا الأساسي</h4>
-                        <p>تسهيل وصول الخدمات الإعلانية والإخبارية للجميع بكل شفافية، سرعة، وموثوقية عالية.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="section-padding why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا الإعلانية والإعلامية</h2>
-                <p>نقدم حلولاً متكاملة للأفراد والشركات في كفرشمس</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    </div>
-                    <h3>النشر الإعلاني التجاري</h3>
-                    <p>إعلانات المحلات، الشركات، العقارات، والخدمات التجارية للوصول إلى أكبر شريحة مستهدفة في البلدة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    </div>
-                    <h3>المناسبات والأفراح</h3>
-                    <p>مشاركة أهالي كفرشمس أفراحهم، تهاني الأعراس، ومناسباتهم الاجتماعية بكل حب وترابط.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
-                    </div>
-                    <h3>التغطيات الإخبارية</h3>
-                    <p>نقل المستجدات المحلية، الخدمات العامة، والفعاليات المجتمعية التي تهم المواطن أولاً بأول.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAP SECTION -->
-    <section id="map-section" class="section-padding map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>موقع بلدة كفرشمس</h2>
-                <p>قلب حوران النابض بالحياة والتاريخ</p>
-            </div>
-            <div class="map-card-container">
-                <a href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" class="circular-map-preview" aria-label="خريطة كفرشمس">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="كفرشمس">
-                </a>
-                <h3>كفرشمس، درعا، سوريا</h3>
-                <p style="color: var(--text-muted);">انقر على الصورة للاطلاع على تفاصيل الموقع الجغرافي واتجاهات الطرق عبر خرائط جوجل.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO / GALLERY SECTION -->
-    <section id="portfolio" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>معرض الصور والأعمال</h2>
-                <p>لمحات من حمالات كفرشمس وفعالياتها اليومية</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="معرض 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/bntQ67z/image.png" alt="معرض 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="معرض 3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="section-padding why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>الأسئلة الشائعة</h2>
-                <p>إجابات واضحة عن كيفية إرسال الإعلانات والتعامل مع المنصة</p>
-            </div>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>كيف يمكنني إرسال إعلان عبر الموقع؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>ببساطة توجه إلى قسم "التواصل وإرسال الإعلانات" في أسفل الصفحة، واملأ النموذج بالاسم، رقم الهاتف، نوع الخدمة، ونص الإعلان، ثم اضغط على زر إرسال.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>متى يتم نشر إعلاني على صفحة الفيسبوك؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>يصل إعلانك مباشرة إلى نظام المراجعة الداخلي لدينا، وفور اعتماده من الإدارة يتم نشره أوتوماتيكياً على الصفحة الرسمية لـ "كفرشمس الآن".</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>هل خدمة نشر الإعلانات مجانية؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>نعم، أغلب الخدمات الإعلانية المجتمعية والإخبارية تقدم لدعم أهالي البلدة، ويمكنك التواصل مباشرة مع الإدارة للاستفسار عن الإعلانات المميزة.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & SUBMISSION SECTION -->
+    <!-- CONTACT & SUBMISSION FORM SECTION -->
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>أرسل إعلانك أو تواصل معنا</h2>
-                <p>املأ النموذج أدناه لتصلك خدمتك إلى آلاف المتابعين في كفرشمس</p>
+                <h2>أرسل إعلانك أو خبرك</h2>
+                <p>املأ النموذج التالي بمعلوماتك، وقم بإرفاق الصور أو الفيديو وسيتم معالجته فوراً.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
                     <div>
-                        <h3>معلومات الاتصال</h3>
-                        <p style="margin-bottom: 30px; color: #E2E8F0;">نحن في خدمة أهالي كفرشمس على مدار الساعة. تواصل معنا لأي استفسار أو مقترح.</p>
-                        
+                        <h3>تواصل معنا مباشرة</h3>
+                        <p>نحن هنا لخدمة أهلنا في كفرشمس وتقديم أفضل تغطية إعلانية وإخبارية.</p>
+                    </div>
+                    <div style="margin-top: 30px;">
                         <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            </div>
+                            <div class="contact-detail-icon">📞</div>
                             <div>
-                                <h4 style="color: var(--secondary); font-size: 0.95rem;">البريد الإلكتروني</h4>
-                                <p style="font-size: 0.95rem;">info@kafrshams.now</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            </div>
-                            <div>
-                                <h4 style="color: var(--secondary); font-size: 0.95rem;">العنوان</h4>
-                                <p style="font-size: 0.95rem;">درعا - كفرشمس، سوريا</p>
+                                <strong>رقم الهاتف / واتساب</strong>
+                                <p style="direction: ltr; text-align: right;">+963 994 882 752</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="social-links-box">
                         <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="social-btn">فيسبوك</a>
-                        <a href="https://www.instagram.com/kafrshams/" target="_blank" class="social-btn">انستجرام</a>
-                        <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="social-btn">واتساب</a>
                     </div>
                 </div>
 
                 <div class="contact-form-card">
-                    <div id="alertsSuccess" class="alert-success">تم إرسال إعلانك بنجاح! جاري مراجعته ونشره قريباً.</div>
-                    
-                    <form id="contactForm">
+                    <div id="alertSuccess" class="alert-success">تم إرسال إعلانك بنجاح! بانتظار الموافقة والنشر.</div>
+                    <form id="adForm">
                         <div class="form-group">
-                            <label for="name">الاسم الكامل</label>
-                            <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
+                            <label for="name">الاسم الكريم</label>
+                            <input type="text" id="name" class="form-control" required placeholder="أدخل اسمك الكامل">
                         </div>
-
                         <div class="form-group">
                             <label for="phone">رقم الهاتف (واتساب)</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="09xxxxxxxx" required>
+                            <input type="tel" id="phone" class="form-control" required placeholder="09xxxxxxxx">
                         </div>
-
                         <div class="form-group">
-                            <label for="serviceType">نوع الخدمة / التصنيف</label>
+                            <label for="serviceType">نوع الإعلان / الخدمة</label>
                             <select id="serviceType" class="form-control" required>
-                                <option value="">اختر تصنيف الإعلان</option>
+                                <option value="">اختر التصنيف</option>
                                 <option value="إعلان تجاري">إعلان تجاري</option>
-                                <option value="مناسبة أو فرح">مناسبة أو فرح</option>
-                                <option value="خبر عام أو خدمة">خبر عام أو خدمة</option>
+                                <option value="مناسبة وافراح">مناسبة / أفراح</option>
+                                <option value="خبر محلي">خبر محلي / خدمي</option>
                                 <option value="أخرى">أخرى</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="message">نص الإعلان أو التفاصيل</label>
-                            <textarea id="message" rows="5" class="form-control" placeholder="اكتب تفاصيل إعلانك هنا..." required></textarea>
+                            <textarea id="message" rows="4" class="form-control" required placeholder="اكتب تفاصيل إعلانك هنا..."></textarea>
                         </div>
-
-                        <!-- خانة إرفاق الصور والفيديوهات الجديدة -->
                         <div class="form-group">
-                            <label for="mediaFile">إرفاق صورة أو فيديو (اختياري)</label>
-                            <input type="file" id="mediaFile" class="form-control" accept="image/*,video/*">
+                            <label for="imagesInput">إرفاق صور (يمكن اختيار أكثر من صورة)</label>
+                            <input type="file" id="imagesInput" class="form-control" accept="image/*" multiple>
                         </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الإعلان الآن</button>
+                        <div class="form-group">
+                            <label for="videoInput">إرفاق فيديو (اختياري)</label>
+                            <input type="file" id="videoInput" class="form-control" accept="video/*">
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">إرسال الإعلان للمراجعة</button>
                     </form>
                 </div>
             </div>
@@ -1302,105 +648,75 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <a href="#" class="logo" style="justify-content: center; margin-bottom: 15px;">
-                <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
-                <span>كفرشمس الآن</span>
-            </a>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">المنصة الأولى المخصصة لنقل نبض الشارع في كفرشمس، تواصل اجتماعي، إعلانات، وأخبار محلية موثوقة.</p>
-            
-            <div class="footer-links">
-                <a href="#hero">الرئيسية</a>
-                <a href="#about">عن البلدة</a>
-                <a href="#services">الخدمات</a>
-                <a href="#contact">اتصل بنا</a>
-            </div>
-
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2026 - منصة كفرشمس الآن</p>
-            </div>
+            <p class="copyright">جميع الحقوق محفوظة © 2026 - منصة كفرشمس الآن</p>
         </div>
     </footer>
 
-    <!-- BACK TO TOP BUTTON -->
-    <button class="back-to-top" id="backToTopBtn" aria-label="العودة للأعلى">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-    </button>
-
-    <!-- JAVASCRIPT: INTEGRATED WITH MAKE.COM WEBHOOK -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // FAQ Accordion Toggle
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const header = item.querySelector('.faq-header');
-            header.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isOpen) {
-                    item.classList.add('active');
-                }
-            });
-        });
+        const CLOUD_NAME = "lqibffwn";[cite: 4]
+        const UPLOAD_PRESET = "kafrshams_ads"; 
+        const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrih18zexr2yl";[cite: 8]
 
-        // Back to Top Button Logic
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.getElementById('navLinks');
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-
-        // Direct Integration with Make.com Webhook including Media Files
-        const contactForm = document.getElementById('contactForm');
-        const alertsSuccess = document.getElementById('alertsSuccess');
-
-        contactForm.addEventListener('submit', async (e) => {
+        document.getElementById('adForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const formData = new FormData();
-            formData.append('name', document.getElementById('name').value);
-            formData.append('phone', document.getElementById('phone').value);
-            formData.append('serviceType', document.getElementById('serviceType').value);
-            formData.append('message', document.getElementById('message').value);
-            
-            const mediaFile = document.getElementById('mediaFile').files[0];
-            if (mediaFile) {
-                formData.append('mediaFile', mediaFile);
-            }
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'جاري رفع الملفات وإرسال الإعلان...';
 
             try {
-                const webhookUrl = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
-                
-                const response = await fetch(webhookUrl, {
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const serviceType = document.getElementById('serviceType').value;
+                const message = document.getElementById('message').value;
+                const imageFiles = document.getElementById('imagesInput').files;
+                const videoFile = document.getElementById('videoInput').files[0];
+
+                let imageUrls = [];
+                let videoUrl = "";
+
+                for (let file of imageFiles) {
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('upload_preset', UPLOAD_PRESET);
+                    const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, { method: 'POST', body: formData });
+                    const data = await res.json();
+                    if (data.secure_url) imageUrls.push(data.secure_url);
+                }
+
+                if (videoFile) {
+                    const formData = new FormData();
+                    formData.append('file', videoFile);
+                    formData.append('upload_preset', UPLOAD_PRESET);
+                    const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/video/upload`, { method: 'POST', body: formData });
+                    const data = await res.json();
+                    if (data.secure_url) videoUrl = data.secure_url;
+                }
+
+                const payload = { 
+                    name: name, 
+                    phone: phone, 
+                    serviceType: serviceType, 
+                    message: message, 
+                    images: imageUrls.join(','), 
+                    video: videoUrl, 
+                    status: 'pending' 
+                };
+
+                await fetch(MAKE_WEBHOOK_URL, {
                     method: 'POST',
-                    body: formData
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
-                    alertsSuccess.style.display = 'block';
-                    contactForm.reset();
-                    setTimeout(() => {
-                        alertsSuccess.style.display = 'none';
-                    }, 4000);
-                } else {
-                    alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
-                }
+                document.getElementById('alertSuccess').style.display = 'block';
+                document.getElementById('adForm').reset();
             } catch (error) {
-                console.error('Error:', error);
-                alert('تعذر الاتصال بالخادم، يرجى التحقق من الاتصال.');
+                alert('حدث خطأ أثناء إرسال الإعلان، يرجى المحاولة مرة أخرى.');
+                console.error(error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'إرسال الإعلان للمراجعة';
             }
         });
     </script>
