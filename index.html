@@ -256,6 +256,7 @@
             gap: 8px;
         }
 
+        /* TOP HEADER OFFICIAL SOCIAL ICONS */
         .top-social-icons {
             display: flex;
             align-items: center;
@@ -643,7 +644,7 @@
             transform: scale(1.05);
         }
 
-        /* MAP SECTION STYLING */
+        /* MAP SECTION STYLING (UPDATED WITH KAFR SHAMS ZOOM IMAGE) */
         .map-section {
             background-color: var(--primary-light);
             text-align: center;
@@ -758,7 +759,7 @@
             max-height: 250px;
         }
 
-        /* CONTACT & SUBMISSION SECTION */
+        /* CONTACT SECTION */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -882,7 +883,7 @@
             font-weight: 700;
         }
 
-        /* FLOATING WHATSAPP BUTTON */
+        /* FLOATING WHATSAPP BUTTON (FOR ADS MANAGER) */
         .whatsapp-float {
             position: fixed;
             bottom: 35px;
@@ -957,6 +958,7 @@
             visibility: visible;
         }
 
+        /* RESPONSIVE FIXES FOR MOBILE */
         @media (max-width: 992px) {
             .hero-grid, .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
@@ -1000,18 +1002,28 @@
                 bottom: 25px;
                 right: 20px;
             }
+            .navbar .container {
+                padding: 0 10px;
+            }
+            .nav-actions {
+                gap: 4px;
+            }
+            .btn-primary {
+                padding: 6px 12px !important;
+                font-size: 0.8rem !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
+    <!-- FLOATING WHATSAPP BUTTON (COMMUNICATE WITH ADS MANAGER) -->
     <a href="https://wa.me/963994882752" class="whatsapp-float" target="_blank" aria-label="تواصل مع مسؤول الإعلانات عبر واتساب">
         <svg class="icon" style="width:26px;height:26px;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
         <span>تواصل مع مسؤول الإعلانات</span>
     </a>
 
-    <!-- NAVBAR -->
+    <!-- 1. NAVBAR WITH LOGO AND OFFICIAL TOP SOCIAL ICONS -->
     <header class="navbar">
         <div class="container">
             <a href="#" class="logo">
@@ -1026,10 +1038,11 @@
                     <li><a href="#map-section">موقع البلدة</a></li>
                     <li><a href="#portfolio">الأعمال والمعرض</a></li>
                     <li><a href="#faq">الأسئلة الشائعة</a></li>
-                    <li><a href="#contact">التواصل والإعلان</a></li>
+                    <li><a href="#contact">التواصل</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
+                <!-- Top Header Official Social Icons (SVG Logos) -->
                 <div class="top-social-icons">
                     <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" aria-label="فيسبوك">
                         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -1037,323 +1050,385 @@
                     <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" aria-label="انستجرام">
                         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     </a>
+                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" aria-label="قناة الواتساب">
+                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
+                    </a>
                 </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3c.497 0 .973.058 1.426.167-3.032.733-5.286 3.44-5.286 6.671 0 3.79 3.078 6.868 6.868 6.868 3.231 0 5.938-2.254 6.671-5.286.11.453.167.929.167 1.426 0 5.188-4.212 9.4-9.4 9.4S2.6 17.188 2.6 12c0-5.188 4.212-9.4 9.4-9.4z"/></svg>
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-1.16 1.76-3.12 2.92-5.36 2.92-3.58 0-6.5-2.92-6.5-6.5 0-2.24 1.16-4.2 2.92-5.36-.44-.06-.9-.1-1.36-.1z"/></svg>
                 </button>
+                <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem; white-space: nowrap;">أعلن معنا</a>
                 <button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>منصة كفرشمس الآن <span>نبض حوران وواجهة البلدة</span></h1>
-                    <p>التغطية الشاملة للأخبار المحلية، مشاركة المناسبات والأفراح، وتقديم أفضل الخدمات الإعلانية والتجارية لربط أهالي كفرشمس في الداخل والخارج.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">أضف إعلانك الآن</a>
-                        <a href="#about" class="btn btn-secondary">تعرف علينا</a>
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>منصة كفرشمس الآن <span>نبض حوران وصوت البلد</span></h1>
+                        <p>المنصة الإخبارية والخدمية الأولى لبلدة كفرشمس العريقة. نرافقكم في نقل الأخبار المحلية، توثيق تاريخها النضالي، مشاركة الأفراح والتخرجات، وتقديم الحلول الإعلانية المتكاملة.</p>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-secondary" style="border-color: #fff; color: #fff;">تاريخ وأصل البلدة</a>
+                            <a href="#services" class="btn btn-primary">استعرض الخدمات</a>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-icon">
-                        <svg class="icon" style="width:40px;height:40px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <div class="hero-card">
+                        <div class="hero-card-icon">
+                            <svg class="icon" style="width:40px;height:40px" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <h3>خدمة الإعلانات والتهاني</h3>
+                        <p>نصل بأخباركم وإعلاناتكم التجارية إلى أهالي البلدة والمغتربين.</p>
                     </div>
-                    <h3>منصة تفاعلية متكاملة</h3>
-                    <p>نظام آلي بالكامل يربط موقعك بـ تيليجرام وفيسبوك لضمان نشر إعلاناتك بكل سلاسة وأمان.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>عن كفرشمس والتاريخ</h2>
-                <p>بلدة عريقة في قلب حوران، تتميز بأصالة أهلها وموقعها الاستراتيجي المهم.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card-box">
-                    <h3>نبذة عن كفرشمس</h3>
-                    <p>كفرشمس هي إحدى بلدان ناحية الحارة في منطقة إزرع في محافظة درعا في سورية. تقع في منطقة حوران التاريخية وتشتهر بأراضيها الزراعية الخصبة وإنتاج القمح والزيتون والعنب.</p>
-                    <p>تتميز البلدة بتاريخ غني وحاضر يعكس تلاحم أبنائها وسعي المستمر للتطوير ومواكبة العصر رغم كل الظروف.</p>
+        <!-- 3. ABOUT KAFR SHAMS & DETAILED HISTORY -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>عن بلدة كفرشمس العريقة</h2>
+                    <p>أصالة التاريخ، العمق الحضاري، وبطولات الإنسان في شمال محافظة درعا - حوران</p>
                 </div>
-                <div class="about-card-box">
-                    <h3>التاريخ العريق والأصالة</h3>
-                    <p>تحتضن كفرشمس العديد من المعالم الأثرية والديوان التاريخي الذي يجمع الأهالي في السراء والضراء. منصة "كفرشمس الآن" جاءت لتكون امتداداً لهذا التواصل الاجتماعي والإخباري الرقمي.</p>
-                    <div class="history-highlights">
-                        <h4>هدف المنصة الأساسي</h4>
-                        <p>تسهيل التواصل ونشر الإعلانات التجارية والخدمية وأخبار المناسبات بسرعة وبدقة عالية لإفادة كافة الأهالي.</p>
+                
+                <div class="about-grid">
+                    <div class="about-card-box">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            الموقع الجغرافي والجذور التاريخية العميقة
+                        </h3>
+                        <p>تعتبر بلدة <strong>كفرشمس</strong> درة المدن والبلدات التاريخية في شمال محافظة درعا ضمن سهل حوران الأبيّ بجنوب سوريا. تتميز بموقع جغرافي استراتيجي فريد على مفترق طرق حيوي يربط بين محافظات درعا والقنيطرة وريف دمشق، وتحديداً عند بوابة منطقة "مثلث الموت".</p>
+                        <p>يعود أصل التسمية إلى الجذور السريانية والآرامية القديمة (حيث تعني كلمة "كفر" القرية أو المزرعة). وتشهد الآثار العريقة والديرين التاريخيين والأقواس الرومانية والغسانية المتناثرة فيها على أن الأرض كانت معقلاً لحضارات زراعية واستيطانية كبرى امتدت لآلاف السنين.</p>
                     </div>
-                </div>
-            </div>
 
-            <!-- STATS -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">+1920</div>
-                    <div class="stat-label">تاريخ وعراقة المنطقة</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">تغطية محلية وخدمية</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">مراجعة ونشر آلي</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">+ألف</div>
-                    <div class="stat-label">مستفيد ومتابع للمنصة</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="section-padding" style="background-color: var(--bg-card);">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا الإعلانية والتجارية</h2>
-                <p>نقدم حلولاً رقمية متكاملة لتسويق أعمالك وخدماتك ونشر إعلاناتك بكل احترافية.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                    </div>
-                    <h3>إعلانات العقارات</h3>
-                    <p>بيع، شراء، وإيجار الأراضي، الشقق، والمنازل السكنية في كفرشمس والجوار.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/></svg>
-                    </div>
-                    <h3>بيع وشراء السلع</h3>
-                    <p>منصة موثوقة لعرض السيارات، الأدوات، والمستلزمات التجارية بين الأهالي.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                    </div>
-                    <h3>الخدمات والوظائف</h3>
-                    <p>الإعلان عن فرص العمل، الورشات الخدمية، والمهن الحرة لدعم الاقتصاد المحلي.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAP SECTION -->
-    <section id="map-section" class="section-padding map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>موقع بلدة كفرشمس</h2>
-                <p>ت Phoقع في محافظة درعا بمنطقة حوران السورية.</p>
-            </div>
-            <div class="map-card-container">
-                <a href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" class="circular-map-preview" aria-label="عرض موقع كفرشمس على خرائط جوجل">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="خريطة كفرشمس">
-                </a>
-                <h3 style="color: var(--primary);">كفرشمس، درعا، سوريا</h3>
-                <p style="color: var(--text-muted);">انقر على الصورة أعلاه لفتح الموقع مباشرة على خرائط جوجل ومعرفة الاتجاهات.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO & GALLERY -->
-    <section id="portfolio" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>معرض الصور والنشاطات</h2>
-                <p>لمحات من طبيعة ونشاطات ومناظير بلدة كفرشمس الحبيبة.</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb">🌾</div>
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">طبيعة وزراعة</span>
-                        <h4>أراضي حوران المعطاءة</h4>
-                        <p>سهول خصبة وموسم زراعي مبارك يعكس عمق الارتباط بالأرض.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb">🏛️</div>
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">تاريخ وآثار</span>
-                        <h4>معالم البلدة التاريخية</h4>
-                        <p>شواهد تاريخية تنبض بالحضارة والأصالة في كل ركن من أركان كفرشمس.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-thumb">🤝</div>
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">مجتمع وتكافل</span>
-                        <h4>تلاحم الأهل والديوان</h4>
-                        <p>روح المحبة والتعاون المستمر بين أبناء البلدة في الداخل والمهجر.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mini Photo Gallery -->
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="صورة 1"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/bntQ67z/image.png" alt="صورة 2"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="صورة 3"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/bntQ67z/image.png" alt="صورة 4"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="section-padding" style="background-color: var(--bg-card);">
-        <div class="container">
-            <div class="section-header">
-                <h2>الأسئلة الشائعة</h2>
-                <p>إجابات واضحة حول طريقة إرسال الإعلانات وشروط النشر.</p>
-            </div>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>كيف يمكنني إضافة إعلان جديد؟</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>بكل سهولة، توجه إلى نموذج الإرسال في أسفل الصفحة، املأ بياناتك، أرفق الصور أو الفيديو إن وجد، واضغط على إرسال للمراجعة.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>كم تستغرق مراجعة الإعلان ونشره؟</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>يتم إرسال إشعار فوري إلى إدارة المنصة عبر تيليجرام، ويتم التدقيق والموافقة ونشر الإعلان فوراً في غضون دقائق معدودة.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>هل خدمة نشر الإعلانات مجانية؟</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>نعم، الإعلانات الخدمية والاجتماعية والعامة مخصصة لدعم أهلنا في كفرشمس بشكل مجاني تماماً.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & SUBMISSION SECTION -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>تواصل معنا وإرسال الإعلانات</h2>
-                <p>املأ النموذج أدناه لإرسال إعلانك مباشرة إلى نظام المراجعة الآلي.</p>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Contact Info Column -->
-                <div class="contact-info">
-                    <div>
-                        <h3>كفرشمس الآن</h3>
-                        <p style="margin-bottom: 30px; opacity: 0.9;">منصتك الموثوقة للتواصل الإخباري والإعلاني في بلدة كفرشمس.</p>
+                    <div class="about-card-box">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                            كفرشمس في الثورة السورية والملاحم النضالية
+                        </h3>
+                        <p>سطر أبناء كفرشمس ملاحم بطولية خالدة منذ انطلاقة الثورة السورية في 23 آذار 2011؛ إذ كان للبلدة السبق في الخروج بمظاهرات عارمة نصرةً لدرعا المهد، وتأكيداً على وحدة النبض الثوري في حوران.</p>
                         
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">📞</div>
-                            <div>
-                                <h4 style="font-size: 0.9rem; opacity: 0.8;">رقم التواصل والاتصال</h4>
-                                <p style="font-weight: 700; direction: ltr; text-align: right;">+963 994 882 752</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">📍</div>
-                            <div>
-                                <h4 style="font-size: 0.9rem; opacity: 0.8;">الموقع الجغرافي</h4>
-                                <p style="font-weight: 700;">كفرشمس، درعا، سوريا</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 style="margin-bottom: 15px; font-size: 1rem;">قنواتنا الرسمية:</h4>
-                        <div class="social-links-box">
-                            <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="social-btn">فيسبوك</a>
-                            <a href="https://www.instagram.com/kafrshams/" target="_blank" class="social-btn">انستجرام</a>
-                            <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="social-btn">قناة واتساب</a>
+                        <div class="history-highlights">
+                            <h4>بطولات مثلث الموت ومعارك التحرير</h4>
+                            <p>شهدت البلدة أعتى المعارك وأنقى صور الصمود الأسطوري بوجه قوى النظام والميليشيات الطائفية، مروراً بمعارك العز في "عاصفة حوران"، وصولاً إلى معركة التحرير الكبرى التي كُللت بتطهير البلدة بالكامل في نيسان 2015. لقد قدمت كفرشمس كوكبة من خيرة أبنائها وقادتها شهداء أطهاراً روت دماؤهم الزكية تراب الوطن الطاهر دفاعاً عن الكرامة والحرية.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Submission Form Column (UPDATED WITH CLOUDINARY URL UPLOAD LOGIC) -->
-                <div class="contact-form-card">
-                    <div class="alert-success" id="successAlert">تم إرسال إعلانك بنجاح وهو قيد المراجعة الإدارية الآن!</div>
-                    
-                    <form id="adForm">
-                        <div class="form-group">
-                            <label for="name">الاسم الكامل *</label>
-                            <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">رقم الهاتف *</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="رقم الهاتف للتواصل" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="serviceType">تصنيف الإعلان *</label>
-                            <select id="serviceType" class="form-control">
-                                <option value="عقارات">عقارات</option>
-                                <option value="وظائف">وظائف وخدمات</option>
-                                <option value="بيع وشراء">بيع وشراء</option>
-                                <option value="أخبار ومناسبات">أخبار ومناسبات عامة</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">تفاصيل الإعلان أو الرسالة *</label>
-                            <textarea id="message" rows="4" class="form-control" placeholder="اكتب تفاصيل إعلانك بوضوح..." required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mediaFile">صور الإعلان (اختياري - تدعم صور متعددة)</label>
-                            <input type="file" id="mediaFile" accept="image/*" multiple class="form-control" style="padding: 10px;">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="videoFile">فيديو الإعلان (اختياري)</label>
-                            <input type="file" id="videoFile" accept="video/*" class="form-control" style="padding: 10px;">
-                        </div>
-
-                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">إرسال الإعلان للمراجعة</button>
-                    </form>
+                <!-- STATS COUNTER -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="65000">0</div>
+                        <div class="stat-label">متابع نشط</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1500">0</div>
+                        <div class="stat-label">مناسبة وإعلان منشور</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">تغطية إخبارية واجتماعية %</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">ساعة خدمة وتواصل</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+        <!-- 4. SERVICES SECTION -->
+        <section id="services" class="section-padding" style="background-color: var(--bg-card);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>خدمات منصة كفرشمس الآن</h2>
+                    <p>نغطي الأنشطة التجارية والإعلانية والمناسبات السعيدة بكل احترافية</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                        </div>
+                        <h3>إعلانات المحلات والمتاجر</h3>
+                        <p>تصوير ونشر إعلانات المحلات التجارية، الشركات، والمشاريع الاقتصادية في البلدة لضمان وصولها لكافة الأهالي.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+                        </div>
+                        <h3>عرض العقارات والسيارات</h3>
+                        <p>منصة مخصصة لعرض العقارات (بيع، شراء، إيجار)، الأراضي الزراعية، والسيارات بدقة واحترافية عالية.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <h3>تغطية الأفراح والمناسبات</h3>
+                        <p>مشاركة الأهالي لحظات الفرح والأعراس والتخرج والتهاني بأرقى التصاميم والقوالب الإعلامية.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        </div>
+                        <h3>الإعلانات العامة والخدمية</h3>
+                        <p>نشر التنويهات، المبادرات المجتمعية، والأخبار الخدمية العامة التي تهم مصلحة أهالي البلدة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INTERACTIVE MAP SECTION (UPDATED WITH DETAILED KAFR SHAMS MAP ZOOM) -->
+        <section id="map-section" class="section-padding map-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>موقع بلدة كفرشمس الجغرافي</h2>
+                    <p>انقر على الخريطة الدائرية أدناه لفتح خرائط جوجل وتحديد الاتجاه المباشر إلى مركز البلدة</p>
+                </div>
+                <div class="map-card-container">
+                    <a href="https://maps.google.com/?q=Kafr+Shams,+Syria" target="_blank" class="circular-map-preview" aria-label="خريطة موقع كفرشمس">
+                        <img src="https://i.ibb.co/hRypwShC/484649414-1048412620642192-924841885796921824-n.jpg" alt="خريطة تقريبية لكفرشمس">
+                    </a>
+                    <h3 style="color: var(--primary); font-size: 1.3rem;">سوريا - درعا - كفرشمس</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">هل أنت خارج البلدة؟ اضغط على الزر أدناه لمعرفة الاتجاهات وحساب مسافة الطريق الحالية إلينا عبر خرائط جوجل.</p>
+                    <a href="https://maps.google.com/?q=Kafr+Shams,+Syria" target="_blank" class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        افتح الاتجاهات في Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WHY CHOOSE US -->
+        <section id="why-us" class="section-padding why-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>لماذا تختار منصة كفرشمس الآن؟</h2>
+                    <p>النافذة الأوثق والأكثر انتشاراً لتسويق إعلانك والوصول للجمهور مباشرة</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h3>جمهور واسع ومستهدف</h3>
+                        <p>نصل إلى آلاف المتابعين من أبناء كفرشمس في الداخل والمغتربين المهتمين بأخبار ومحلات البلدة.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>مصداقية وسرعة في النشر</h3>
+                        <p>دقة تامة في نقل المعلومات والتعامل مع الإعلانات والمناسبات باحترافية تامة وسرعة في الطرح.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <h3>تصاميم بصرية مميزة</h3>
+                        <p>صياغة وإخراج الإعلانات بقوالب بصرية جذابة تضمن لفت انتباه المتابعين وتحقيق أهدافها.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PORTFOLIO & REAL PHOTO GALLERY -->
+        <section id="portfolio" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>معرض الأعمال وتغطيات البلدة</h2>
+                    <p>أمثلة واضحة وتصاميم مخصصة للمناسبات والإعلانات ومعرض صور بلدة كفرشمس الحقيقية</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1B4D3E, #256D58);">💍</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">أعراس ومناسبات سعيدة</span>
+                            <h4>بطاقات الأفراح وحفلات الزفاف</h4>
+                            <p>تصاميم ملكية راقية وبطاقات مباركة مخصصة للأفراح والأعراس في البلدة بأسلوب فني رفيع.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #D4AF37, #B5932B);">🎓</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">تهاني التخرج</span>
+                            <h4>حفلات التخرج والنجاح الأكاديمي</h4>
+                            <p>مشاركة الفرحة مع الخريجين والجامعيين ببروموهات وتصاميم تهنئة متميزة ومبتكرة.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #143B2F, #D4AF37);">🏢</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">إعلانات تجارية</span>
+                            <h4>ترويج المحلات والشركات</h4>
+                            <p>محتوى تسويقي وإعلانات مبوبة واحترافية تبرز هوية المحل التجاري وتزيد مبيعاته.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALLERY GRID WITH REAL USER UPLOADED IMAGES -->
+                <h3 style="margin-top: 50px; text-align: center; color: var(--primary);">معرض صور بلدة كفرشمس</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://i.ibb.co/tTc7Hsgt/151835261-4232202530127204-1556384445950969202-n.jpg" alt="صورة من كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/ZRf4v0d9/490282274-24032839582970205-3763014942639953907-n.jpg" alt="معالم كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/4hp46QT/483961504-1045831407566980-905811826123881682-n.jpg" alt="معالم ومعمار كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/hRypwShC/484649414-1048412620642192-924841885796921824-n.jpg" alt="لقطة من كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/T5yYwrm/img1-jpg.jpg" alt="صورة إضافية من كفرشمس"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ SECTION -->
+        <section id="faq" class="section-padding" style="background-color: var(--bg-card);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>الأسئلة الشائعة</h2>
+                    <p>إجابات واضحة حول آلية نشر الإعلانات والمناسبات في الصفحة</p>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>كيف يمكنني نشر إعلان تجاري أو تهنئة في صفحة كفرشمس الآن؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>يمكنك التواصل المباشر مع مسؤول الإعلانات عبر النقر على زر الواتساب العائم أو الإيميل <a href="mailto:kafrshams4@gmail.com" style="color:var(--primary); font-weight:700; text-decoration:underline;">kafrshams4@gmail.com</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>ما هي سياسة نشر الإعلانات والمناسبات؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>الإعلانات التجارية والمناسبات تخضع للتنسيق مع إدارة الصفحة وفق المعايير المحددة لضمان الجودة والوصول الأمثل للجمهور المستهدف.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>ما هي الطرق الرسمية المعتمدة للتواصل مع الإدارة؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>التواصل يتم عبر <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:underline;">قناة الواتساب</a> أو صفحاتنا الرسمية على فيسبوك وتليجرام.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CONTACT SECTION -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>تواصل معنا وطلب الإعلانات</h2>
+                    <p>يسعدنا خدمتكم والتواصل معكم دائماً لنشر إعلاناتكم ومناسباتكم السعيدة</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div>
+                            <h3>بيانات التواصل المباشر</h3>
+                            <p style="margin-bottom: 25px;">يرجى التواصل مع إدارة صفحة كفرشمس الآن عبر منصاتنا الرسمية التالية:</p>
+
+                            <div class="contact-detail-item">
+                                <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="contact-detail-icon" aria-label="قناة الواتساب">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </a>
+                                <div>
+                                    <strong>قناة الواتساب الرسمية:</strong>
+                                    <p><a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">انضم للقناة الآن</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <a href="mailto:kafrshams4@gmail.com" class="contact-detail-icon" aria-label="إرسال بريد إلكتروني">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </a>
+                                <div>
+                                    <strong>البريد الإلكتروني:</strong>
+                                    <p><a href="mailto:kafrshams4@gmail.com" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">kafrshams4@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Buttons Box -->
+                            <div class="social-links-box">
+                                <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="social-btn">📘 فيسبوك</a>
+                                <a href="https://www.instagram.com/kafrshams/" target="_blank" class="social-btn">📷 انستجرام</a>
+                                <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="social-btn">💬 واتساب</a>
+                            </div>
+                        </div>
+
+                        <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" class="btn btn-whatsapp" target="_blank" style="margin-top: 25px; background-color: #25D366; color: #fff;">
+                            الانضمام لقناة الواتساب الرسمية
+                        </a>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <div class="alert-success" id="alertSuccess">
+                            تم تجهيز طلبك! سيتم تحويلك الآن لمراسلة مسؤول الإعلانات عبر الواتساب...
+                        </div>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">الاسم الكريم</label>
+                                <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكامل" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف / الواتساب</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+963..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceType">نوع الخدمة المطلوبة</label>
+                                <select id="serviceType" class="form-control">
+                                    <option value="تجاري">إعلان تجاري / محلات</option>
+                                    <option value="مناسبة">مناسبة سعيدة / فرح / تخرج</option>
+                                    <option value="عقارات">عقارات / سيارات</option>
+                                    <option value="آخر">استفسار عام</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">تفاصيل الإعلان أو الرسالة</label>
+                                <textarea id="message" rows="4" class="form-control" placeholder="اكتب تفاصيل إعلانك أو رسالتك هنا..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الطلب عبر الواتساب</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. FOOTER -->
     <footer class="footer">
         <div class="container">
-            <a href="#" class="logo" style="justify-content: center; margin-bottom: 15px;">
+            <div class="logo" style="justify-content: center; margin-bottom: 15px;">
                 <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
                 <span>كفرشمس الآن</span>
-            </a>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">المنصة الإخبارية والخدمية الأولى لبلدة كفرشمس وحوران، نجمعكم على المحبة والتعاون والتواصل المستمر.</p>
+            </div>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">المنصة الإخبارية والخدمية الأولى لبلدة كفرشمس في حوران - سوريا</p>
             
             <div class="footer-links">
                 <a href="#hero">الرئيسية</a>
                 <a href="#about">عن البلدة</a>
                 <a href="#services">الخدمات</a>
-                <a href="#contact">اتصل بنا</a>
+                <a href="#map-section">موقع البلدة</a>
+                <a href="#contact">التواصل</a>
             </div>
 
             <div class="copyright">
-                جميع الحقوق محفوظة © 2026 منصة كفرشمس الآن. صُممت بحرص لخدمة الأهل.
+                جميع الحقوق محفوظة &copy; <span id="year"></span> منصة <strong>كفرشمس الآن</strong>
             </div>
         </div>
     </footer>
@@ -1361,145 +1436,112 @@
     <!-- BACK TO TOP BUTTON -->
     <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">▲</button>
 
-    <!-- JAVASCRIPT: THEME TOGGLE, MOBILE MENU, & CLOUDINARY WEBHOOK SUBMISSION -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 1. Mobile Menu Toggle
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // 2. Dark/Light Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-        });
-
-        // 3. Back to Top Button
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 400) {
                 backToTopBtn.classList.add('visible');
             } else {
                 backToTopBtn.classList.remove('visible');
             }
         });
+
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 4. FAQ Accordion
-        document.querySelectorAll('.faq-header').forEach(header => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
             header.addEventListener('click', () => {
-                const item = header.parentElement;
-                item.classList.toggle('active');
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
             });
         });
 
-        // 5. CLOUDINARY UPLOAD & MAKE WEBHOOK INTEGRATION (حل مشكلة مساحة الـ 1MB نهائياً)
-        // ** ضع رابط الويب هوك الخاص بك هنا **
-        const WEBHOOK_URL = 'YOUR_MAKE_WEBHOOK_URL';
-        const CLOUD_NAME = 'lqibffwn';
-        const UPLOAD_PRESET = 'kafrshams_ads';
+        const counters = document.querySelectorAll('.stat-number');
+        let animated = false;
 
-        document.getElementById('adForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const submitBtn = document.getElementById('submitBtn');
-            const successAlert = document.getElementById('successAlert');
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'جاري رفع الملفات ومعالجة الإعلان...';
-            successAlert.style.display = 'none';
-
-            try {
-                let imageUrls = [];
-                let videoUrl = '';
-
-                // أ. رفع الصور إلى Cloudinary واستخراج الروابط النصية الخفيفة فقط
-                const imageInput = document.getElementById('mediaFile');
-                if (imageInput.files.length > 0) {
-                    for (let file of imageInput.files) {
-                        const formData = new FormData();
-                        formData.append('file', file);
-                        formData.append('upload_preset', UPLOAD_PRESET);
-
-                        const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-                            method: 'POST',
-                            body: formData
-                        });
-                        const data = await res.json();
-                        if (data.secure_url) {
-                            imageUrls.push(data.secure_url);
-                        }
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const speed = 200;
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString('en-US');
                     }
-                }
-
-                // ب. رفع الفيديو إلى Cloudinary واستخراج الرابط النصي الخفيف
-                const videoInput = document.getElementById('videoFile');
-                if (videoInput.files.length > 0) {
-                    const videoFile = videoInput.files[0];
-                    const formData = new FormData();
-                    formData.append('file', videoFile);
-                    formData.append('upload_preset', UPLOAD_PRESET);
-
-                    const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/video/upload`, {
-                        method: 'POST',
-                        body: formData
-                    });
-                    const data = await res.json();
-                    if (data.secure_url) {
-                        videoUrl = data.secure_url;
-                    }
-                }
-
-                // ج. تجهيز الحمولة (Payload) الروابط النصية فقط لتجنب امتلاء مخزن البيانات في Make (1MB)
-                const payload = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    serviceType: document.getElementById('serviceType').value,
-                    message: document.getElementById('message').value,
-                    images: imageUrls.join(','), // دمج الروابط بفاصلة
-                    video: videoUrl
                 };
+                updateCount();
+            });
+        };
 
-                // د. إرسال البيانات إلى Make Webhook
-                const webhookRes = await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                if (webhookRes.ok) {
-                    successAlert.style.display = 'block';
-                    successAlert.textContent = 'تم إرسال إعلانك بنجاح وهو قيد المراجعة الإدارية الآن!';
-                    document.getElementById('adForm').reset();
-                    successAlert.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    throw new Error('فشل إرسال البيانات للخادم.');
-                }
-
-            } catch (error) {
-                console.error(error);
-                alert('حدث خطأ أثناء رفع الملفات أو إرسال الإعلان. تحقق من اتصال الإنترنت وحاول مجدداً.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'إرسال الإعلان للمراجعة';
+        const statsSection = document.querySelector('.stats-grid');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !animated) {
+                animateCounters();
+                animated = true;
             }
+        }, { threshold: 0.5 });
+
+        if(statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Contact Form Direct WhatsApp Integration
+        const contactForm = document.getElementById('contactForm');
+        const alertSuccess = document.getElementById('alertSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const message = document.getElementById('message').value;
+
+            const waMessage = `مرحباً، أود طلب خدمة إعلانية:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- النوع: ${serviceType}%0A- التفاصيل: ${message}`;
+            
+            alertSuccess.style.display = 'block';
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/963994882752?text=${waMessage}`, '_blank');
+                alertSuccess.style.display = 'none';
+                contactForm.reset();
+            }, 1200);
         });
     </script>
 </body>
