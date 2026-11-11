@@ -1,1445 +1,400 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كفرشمس الآن - المنصة الإخبارية والخدمية الأولى لمدينة كفرشمس</title>
-    <meta name="description" content="منصة كفرشمس الآن: التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة.">
-    
-    <!-- Open Graph SEO -->
-    <meta property="og:title" content="كفرشمس الآن - المنصة الإخبارية والخدمية">
-    <meta property="og:description" content="المنصة الإخبارية والخدمية والتجارية لبلدة كفرشمس في درعا. تابع الأخبار المحلية والإعلانات والمناسبات السعيدة.">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon Mapped -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/bntQ67z/image.png">
-
-    <!-- Google Fonts: Tajawal -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary: #1B4D3E;
-            --primary-hover: #143B2F;
-            --primary-light: #E8F0EC;
-            --secondary: #D4AF37;
-            --secondary-hover: #B5932B;
-            
-            --bg-body: #FAFAFA;
-            --bg-card: #FFFFFF;
-            --bg-nav: rgba(255, 255, 255, 0.95);
-            
-            --text-main: #2C3E50;
-            --text-muted: #7F8C8D;
-            --border-color: #E2E8F0;
-            
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-md: 0 6px 20px rgba(0,0,0,0.07);
-            --shadow-lg: 0 12px 30px rgba(0,0,0,0.1);
-            
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 24px;
-            
-            --transition: all 0.3s ease;
-        }
-
-        [data-theme="dark"] {
-            --primary: #256D58;
-            --primary-hover: #1E5948;
-            --primary-light: #162621;
-            --secondary: #E5C158;
-            
-            --bg-body: #121212;
-            --bg-card: #1A1A1A;
-            --bg-nav: rgba(26, 26, 26, 0.95);
-            
-            --text-main: #F1F5F9;
-            --text-muted: #94A3B8;
-            --border-color: #2D3748;
-            
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 6px 20px rgba(0,0,0,0.4);
-            --shadow-lg: 0 12px 30px rgba(0,0,0,0.5);
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.8;
-            direction: rtl;
-            text-align: right;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, .logo span {
-            font-family: 'Tajawal', sans-serif;
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-padding {
-            padding: 90px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 50px auto;
-        }
-
-        .section-header h2 {
-            font-size: 2.3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 70px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: var(--radius-sm);
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: #FFFFFF;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        [data-theme="dark"] .btn-secondary {
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary);
-            color: #FFFFFF;
-            transform: translateY(-2px);
-        }
-
-        .icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* NAVBAR STYLING & MOBILE FIX */
-        .navbar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: var(--bg-nav);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 85px;
-            padding: 0 15px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.25rem;
-            font-weight: 900;
-            color: var(--primary);
-        }
-
-        .site-logo-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--secondary);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* TOP HEADER OFFICIAL SOCIAL ICONS */
-        .top-social-icons {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .top-social-btn {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-
-        .top-social-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        .top-social-btn:hover {
-            background-color: var(--primary);
-            color: #FFFFFF;
-            transform: translateY(-2px);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            padding: 6px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--border-color);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.6rem;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            padding: 190px 0 120px 0;
-            background: linear-gradient(135deg, rgba(27, 77, 62, 0.94), rgba(20, 59, 47, 0.9)), url('https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #FFFFFF;
-            position: relative;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            line-height: 1.2;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 span {
-            color: var(--secondary);
-            display: block;
-            margin-top: 5px;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: #E2E8F0;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-card {
-            background-color: var(--bg-card);
-            color: var(--text-main);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .hero-card-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-        }
-
-        .hero-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .hero-card p {
-            color: var(--text-muted);
-        }
-
-        /* ABOUT SECTION & HISTORY */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 50px;
-        }
-
-        .about-card-box {
-            background-color: var(--bg-card);
-            padding: 35px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            height: 100%;
-        }
-
-        .about-card-box h3 {
-            font-size: 1.7rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .about-card-box p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .history-highlights {
-            background-color: var(--primary-light);
-            border-right: 4px solid var(--secondary);
-            padding: 20px;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin-top: 20px;
-        }
-
-        .history-highlights h4 {
-            color: var(--primary);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-
-        .history-highlights p {
-            color: var(--text-main);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat-card {
-            background-color: var(--bg-card);
-            padding: 30px 20px;
-            border-radius: var(--radius-md);
-            text-align: center;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stat-number {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 5px;
-            direction: ltr;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        /* SERVICES SECTION */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 35px 25px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* WHY US */
-        .why-us {
-            background-color: var(--primary-light);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .feature-item {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .feature-icon-wrapper {
-            width: 75px;
-            height: 75px;
-            background: var(--primary);
-            color: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-        }
-
-        .feature-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .feature-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* PORTFOLIO & GALLERY */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .portfolio-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .portfolio-thumb {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFFFFF;
-            font-size: 3.5rem;
-        }
-
-        .portfolio-body {
-            padding: 25px;
-        }
-
-        .portfolio-tag {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 4px 14px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
-
-        .portfolio-body h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .portfolio-body p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .gallery-item {
-            height: 200px;
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* MAP SECTION STYLING */
-        .map-section {
-            background-color: var(--primary-light);
-            text-align: center;
-        }
-
-        .map-card-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .circular-map-preview {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid var(--secondary);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-            display: block;
-        }
-
-        .circular-map-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .circular-map-preview:hover img {
-            transform: scale(1.1);
-        }
-
-        .circular-map-preview::after {
-            content: 'انقر لتحديد الاتجاهات';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(27, 77, 62, 0.85);
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 0;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .circular-map-preview:hover::after {
-            opacity: 1;
-        }
-
-        /* FAQ ACCORDION */
-        .faq-accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .faq-header {
-            width: 100%;
-            padding: 20px 25px;
-            background: none;
-            border: none;
-            text-align: right;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-main);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-            color: var(--primary);
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0 25px;
-            color: var(--text-muted);
-        }
-
-        .faq-item.active .faq-content {
-            padding: 0 25px 25px 25px;
-            max-height: 250px;
-        }
-
-        /* CONTACT SECTION */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info {
-            background-color: var(--primary);
-            color: #FFFFFF;
-            padding: 45px;
-            border-radius: var(--radius-lg);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-info h3 {
-            font-size: 1.9rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .contact-detail-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .contact-detail-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            flex-shrink: 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .contact-detail-icon:hover {
-            background: var(--secondary);
-            color: var(--primary);
-        }
-
-        .social-links-box {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-btn {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: var(--radius-sm);
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: var(--transition);
-        }
-
-        .social-btn:hover {
-            background: var(--secondary);
-            color: var(--primary);
-            border-color: var(--secondary);
-        }
-
-        .contact-form-card {
-            background-color: var(--bg-card);
-            padding: 45px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            font-family: 'Tajawal', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.12);
-        }
-
-        .alert-success {
-            display: none;
-            background-color: #D4EDDA;
-            color: #155724;
-            padding: 15px;
-            border-radius: var(--radius-sm);
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        /* FLOATING WHATSAPP BUTTON */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 35px;
-            right: 30px;
-            background-color: #25D366;
-            color: #FFFFFF;
-            border-radius: 50px;
-            padding: 12px 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            background-color: #1EBE5D;
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
-            color: #FFFFFF;
-        }
-
-        /* FOOTER */
-        .footer {
-            background-color: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            padding: 60px 0 25px 0;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 25px 0;
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 25px;
-            margin-top: 25px;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 48px;
-            height: 48px;
-            background-color: var(--primary);
-            color: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            box-shadow: var(--shadow-md);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 99;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* RESPONSIVE FIXES */
-        @media (max-width: 992px) {
-            .hero-grid, .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .nav-links {
-                position: fixed;
-                top: 85px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 85px);
-                background-color: var(--bg-card);
-                flex-direction: column;
-                padding: 40px;
-                transition: 0.3s ease;
-                box-shadow: var(--shadow-lg);
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-            .whatsapp-float span {
-                display: none;
-            }
-            .whatsapp-float {
-                padding: 14px;
-                border-radius: 50%;
-                bottom: 25px;
-                right: 20px;
-            }
-            .navbar .container {
-                padding: 0 10px;
-            }
-            .nav-actions {
-                gap: 4px;
-            }
-            .btn-primary {
-                padding: 6px 12px !important;
-                font-size: 0.8rem !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كفرشمس الآن - المنصة الإخبارية والخدمية الأولى لمدينة كفرشمس</title>
+<meta name="description" content="منصة كفرشمس الآن: أخبار بلدة كفرشمس في حوران، الأفراح والمناسبات، والخدمات الإعلانية والتجارية.">
+<meta property="og:title" content="كفرشمس الآن - المنصة الإخبارية والخدمية">
+<meta property="og:description" content="المنصة الإخبارية والخدمية والتجارية لبلدة كفرشمس في درعا.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="https://i.ibb.co/bntQ67z/image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--p:#1B4D3E;--ph:#143B2F;--pl:#E8F0EC;--s:#D4AF37;--bg:#FAFAFA;--card:#fff;--tx:#2C3E50;--mu:#7F8C8D;--bd:#E2E8F0;--sh:0 6px 20px rgba(0,0,0,.07);--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--tx);line-height:1.8;direction:rtl;text-align:right;overflow-x:hidden}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+.c{max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:90px 0}
+.alt{background:var(--pl)}
+.sh{text-align:center;max-width:750px;margin:0 auto 50px}
+.sh h2{font-size:2.3rem;color:var(--p);margin-bottom:15px;position:relative;display:inline-block}
+.sh h2::after{content:'';position:absolute;bottom:-10px;right:50%;transform:translateX(50%);width:70px;height:4px;background:var(--s);border-radius:2px}
+.sh p{color:var(--mu);font-size:1.1rem}
+.ic{width:22px;height:22px;fill:currentColor;vertical-align:middle}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 30px;font:700 1rem 'Tajawal',sans-serif;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:.3s}
+.bp{background:var(--p);color:#fff}.bp:hover{background:var(--ph);transform:translateY(-2px)}
+.bp:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.bs{border-color:var(--p);color:var(--p)}.bs:hover{background:var(--p);color:#fff}
+/* navbar */
+.nav{position:fixed;top:0;right:0;width:100%;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+.nav .c{display:flex;align-items:center;justify-content:space-between;height:85px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.25rem;font-weight:900;color:var(--p)}
+.logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--s)}
+.links{display:flex;align-items:center;gap:20px}
+.links a{font-weight:600;font-size:.95rem}.links a:hover{color:var(--p)}
+.acts{display:flex;align-items:center;gap:8px}
+.soc{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--pl);color:var(--p);border:1px solid var(--bd);transition:.3s}
+.soc:hover{background:var(--p);color:#fff}
+.soc svg{width:16px;height:16px;fill:currentColor}
+.hamburger{display:none;background:none;border:none;color:var(--tx);font-size:1.6rem;cursor:pointer;padding:4px}
+/* hero */
+.hero{padding:190px 0 120px;background:linear-gradient(135deg,rgba(27,77,62,.94),rgba(20,59,47,.9)),url('https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg') center/cover;color:#fff}
+.hg{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:3.2rem;font-weight:900;line-height:1.2;margin-bottom:20px}
+.hero h1 span{color:var(--s);display:block;margin-top:5px}
+.hero p.lead{font-size:1.25rem;color:#E2E8F0;margin-bottom:35px}
+.hb{display:flex;gap:15px;flex-wrap:wrap}
+.hero .bs{border-color:#fff;color:#fff}.hero .bs:hover{background:#fff;color:var(--p)}
+.hcard{background:var(--card);color:var(--tx);border-radius:24px;padding:40px 30px;box-shadow:0 12px 30px rgba(0,0,0,.1);text-align:center}
+.hcard h3{font-size:1.5rem;color:var(--p);margin-bottom:12px}
+.hcard p{color:var(--mu)}
+/* cards */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.box{background:var(--card);padding:35px;border-radius:var(--r);border:1px solid var(--bd);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.box h3{font-size:1.6rem;color:var(--p);margin-bottom:20px}
+.box p{color:var(--mu);margin-bottom:15px;text-align:justify}
+.hl{background:var(--pl);border-right:4px solid var(--s);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
+.hl h4{color:var(--p);margin-bottom:8px}.hl p{color:var(--tx);margin:0}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.sc{background:var(--card);padding:35px 25px;border-radius:var(--r);border:1px solid var(--bd);transition:.3s}
+.sc:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:var(--p)}
+.sc .em{width:65px;height:65px;background:var(--pl);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:20px}
+.sc h3{font-size:1.35rem;color:var(--p);margin-bottom:12px}
+.sc p{color:var(--mu);font-size:.95rem}
+/* map */
+.mc{max-width:500px;margin:0 auto;background:var(--card);padding:40px;border-radius:24px;border:1px solid var(--bd);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.mp{width:220px;height:220px;border-radius:50%;overflow:hidden;border:5px solid var(--s);display:block}
+.mp img{width:100%;height:100%;object-fit:cover;transition:.3s}.mp:hover img{transform:scale(1.1)}
+/* faq */
+.faq{max-width:800px;margin:0 auto}
+.fi{background:var(--card);border:1px solid var(--bd);border-radius:8px;margin-bottom:15px;overflow:hidden}
+.fh{width:100%;padding:20px 25px;background:none;border:none;text-align:right;font:700 1.15rem 'Tajawal',sans-serif;color:var(--tx);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.fh .ic{color:var(--p);transition:.3s}.fi.on .ic{transform:rotate(180deg)}
+.fc{max-height:0;overflow:hidden;transition:.3s;padding:0 25px;color:var(--mu)}
+.fi.on .fc{max-height:250px;padding:0 25px 25px}
+/* contact */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ci{background:var(--p);color:#fff;padding:45px;border-radius:24px;display:flex;flex-direction:column;justify-content:space-between}
+.ci h3{font-size:1.9rem;color:var(--s);margin-bottom:15px}
+.ci h4{color:var(--s);font-size:.95rem}
+.ci .it{margin-bottom:25px}
+.sl{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.sl a{background:rgba(255,255,255,.12);padding:10px 18px;border-radius:8px;font-weight:700;font-size:.9rem;border:1px solid rgba(255,255,255,.2);transition:.3s}
+.sl a:hover{background:var(--s);color:var(--p)}
+.fm{background:var(--card);padding:45px;border-radius:24px;border:1px solid var(--bd);box-shadow:var(--sh)}
+.fg{margin-bottom:20px}
+.fg label{display:block;margin-bottom:8px;font-weight:700}
+.fc2{width:100%;padding:14px 18px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:1rem 'Tajawal',sans-serif}
+.fc2:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px rgba(27,77,62,.12)}
+.hint{display:block;margin-top:6px;color:var(--mu);font-size:.85rem}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ok{display:none;background:#D4EDDA;color:#155724;padding:15px;border-radius:8px;margin-bottom:20px;text-align:center;font-weight:700}
+.pb{display:none;margin-bottom:20px}
+.pt{height:10px;background:var(--bd);border-radius:6px;overflow:hidden}
+.pr{height:100%;width:0;background:var(--p);transition:width .2s}
+.px{display:block;margin-top:8px;font-size:.9rem;color:var(--mu);text-align:center}
+/* floating + footer */
+.wa{position:fixed;bottom:35px;right:30px;background:#25D366;color:#fff;border-radius:50px;padding:12px 22px;display:flex;align-items:center;gap:10px;font-weight:700;box-shadow:0 10px 25px rgba(37,211,102,.4);z-index:999;transition:.3s}
+.wa:hover{background:#1EBE5D;transform:translateY(-4px)}
+.wa .ic{width:26px;height:26px}
+footer{background:var(--card);border-top:1px solid var(--bd);padding:60px 0 25px;text-align:center}
+.fl{display:flex;justify-content:center;gap:30px;margin:25px 0;flex-wrap:wrap}
+.cp{color:var(--mu);border-top:1px solid var(--bd);padding-top:25px;margin-top:25px}
+.top{position:fixed;bottom:30px;left:30px;width:48px;height:48px;background:var(--p);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:99}
+.top.v{opacity:1;visibility:visible}
+@media(max-width:992px){.hg,.grid2,.cg{grid-template-columns:1fr}}
+@media(max-width:768px){
+.hamburger{display:block}
+.links{position:fixed;top:85px;right:-100%;width:100%;height:calc(100vh - 85px);background:var(--card);flex-direction:column;padding:40px;transition:.3s}
+.links.on{right:0}
+.hero h1{font-size:2.3rem}
+.wa span{display:none}
+.wa{padding:14px;border-radius:50%;bottom:25px;right:20px}
+.fm,.ci{padding:28px}
+section{padding:70px 0}
+}
+</style>
 </head>
 <body>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/963994882752" class="whatsapp-float" target="_blank" aria-label="تواصل مع مسؤول الإعلانات عبر واتساب">
-        <svg class="icon" style="width:26px;height:26px;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
-        <span>تواصل مع مسؤول الإعلانات</span>
-    </a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.3 5.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></symbol>
+<symbol id="i-dn" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></symbol>
+</svg>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
-                <span>كفرشمس الآن</span>
-            </a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero">الرئيسية</a></li>
-                    <li><a href="#about">عن كفرشمس والتاريخ</a></li>
-                    <li><a href="#services">خدمات الإعلانات</a></li>
-                    <li><a href="#map-section">موقع البلدة</a></li>
-                    <li><a href="#portfolio">الأعمال والمعرض</a></li>
-                    <li><a href="#faq">الأسئلة الشائعة</a></li>
-                    <li><a href="#contact">التواصل</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <div class="top-social-icons">
-                    <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" aria-label="فيسبوك">
-                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" aria-label="انستجرام">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" aria-label="قناة الواتساب">
-                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+<a href="https://wa.me/963994882752" class="wa" target="_blank" rel="noopener" aria-label="تواصل مع مسؤول الإعلانات عبر واتساب">
+<svg class="ic"><use href="#i-wa"/></svg><span>تواصل مع مسؤول الإعلانات</span></a>
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>منصة كفرشمس الآن <span>نبض بلدتنا وكل أخبارها</span></h1>
-                    <p>التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة بكل احترافية.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">أرسل إعلانك الآن</a>
-                        <a href="#about" class="btn btn-secondary">تعرف علينا</a>
-                    </div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-icon">
-                        <svg class="icon" style="width:40px;height:40px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-5h2v5h-2zm0-7v-2h2v2h-2z"/></svg>
-                    </div>
-                    <h3>خدمة الإعلانات التلقائية</h3>
-                    <p>أرسل طلبك مباشرة من الموقع وسيتم جدولته ومراجعته ونشره أوتوماتيكياً عبر صفحتنا الرسمية.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="nav">
+<div class="c">
+<a href="#" class="logo"><img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن"><span>كفرشمس الآن</span></a>
+<nav><ul class="links" id="navLinks">
+<li><a href="#hero">الرئيسية</a></li>
+<li><a href="#about">عن كفرشمس</a></li>
+<li><a href="#services">خدمات الإعلانات</a></li>
+<li><a href="#map">موقع البلدة</a></li>
+<li><a href="#faq">الأسئلة الشائعة</a></li>
+<li><a href="#contact">أرسل إعلانك</a></li>
+</ul></nav>
+<div class="acts">
+<a href="https://www.facebook.com/gaalii1920/" target="_blank" rel="noopener" class="soc" aria-label="فيسبوك"><svg><use href="#i-fb"/></svg></a>
+<a href="https://www.instagram.com/kafrshams/" target="_blank" rel="noopener" class="soc" aria-label="انستجرام"><svg><use href="#i-ig"/></svg></a>
+<a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" rel="noopener" class="soc" aria-label="قناة الواتساب"><svg><use href="#i-wa"/></svg></a>
+<button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
+</div>
+</div>
+</header>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>عن كفرشمس والتاريخ</h2>
-                <p>تعرف على جذور بلدتنا الأصيلة ومسيرتنا في خدمة الأهل</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card-box">
-                    <h3>🏛️ مدينة كفرشمس العريقة</h3>
-                    <p>تعتبر كفرشمس إحدى أهم البلدات في منطقة حوران بريف درعا السوري، وتتميز بتاريخها العريق الممتد عبر العصور، وأرضها الطيبة المعطاءة، وأبنائها الأوفياء الذين ضربوا أروع أمثلة التلاحم والكرم.</p>
-                    <p>تتميز بموقع استراتيجي وتنوع ثقافي واجتماعي غني يجعلها نبضاً حقيقياً للمنطقة.</p>
-                </div>
-                <div class="about-card-box">
-                    <h3>💡 رؤية منصة "كفرشمس الآن"</h3>
-                    <p>انطلقت المنصة لتكون النافذة الإعلامية والخدمية الأولى لأهالي البلدة، بهدف توثيق الأخبار المحلية، ونسج روابط التواصل الاجتماعي، ومساندة التجار وأصحاب الأعمال في الترويج لخدماتهم.</p>
-                    <div class="history-highlights">
-                        <h4>🎯 هدفنا الأساسي</h4>
-                        <p>تسهيل وصول الخدمات الإعلانية والإخبارية للجميع بكل شفافية، سرعة، وموثوقية عالية.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="hero" class="hero">
+<div class="c"><div class="hg">
+<div>
+<h1>منصة كفرشمس الآن <span>نبض بلدتنا وكل أخبارها</span></h1>
+<p class="lead">التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة بكل احترافية.</p>
+<div class="hb"><a href="#contact" class="btn bp">أرسل إعلانك الآن</a><a href="#about" class="btn bs">تعرف علينا</a></div>
+</div>
+<div class="hcard"><h3>📢 خدمة الإعلانات التلقائية</h3><p>أرسل إعلانك مع صورك وفيديو من الموقع مباشرة، وبعد مراجعته ننشره على صفحتنا الرسمية.</p></div>
+</div></div>
+</section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="section-padding why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا الإعلانية والإعلامية</h2>
-                <p>نقدم حلولاً متكاملة للأفراد والشركات في كفرشمس</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    </div>
-                    <h3>النشر الإعلاني التجاري</h3>
-                    <p>إعلانات المحلات، الشركات، العقارات، والخدمات التجارية للوصول إلى أكبر شريحة مستهدفة في البلدة.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    </div>
-                    <h3>المناسبات والأفراح</h3>
-                    <p>مشاركة أهالي كفرشمس أفراحهم، تهاني الأعراس، ومناسباتهم الاجتماعية بكل حب وترابط.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="icon" style="width:30px;height:30px;" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
-                    </div>
-                    <h3>التغطيات الإخبارية</h3>
-                    <p>نقل المستجدات المحلية، الخدمات العامة، والفعاليات المجتمعية التي تهم المواطن أولاً بأول.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+<div class="c">
+<div class="sh"><h2>عن كفرشمس والتاريخ</h2><p>تعرف على جذور بلدتنا الأصيلة ومسيرتنا في خدمة الأهل</p></div>
+<div class="grid2">
+<div class="box"><h3>🏛️ مدينة كفرشمس العريقة</h3>
+<p>تعتبر كفرشمس إحدى أهم البلدات في منطقة حوران بريف درعا السوري، وتتميز بتاريخها العريق وأرضها الطيبة المعطاءة، وأبنائها الأوفياء الذين ضربوا أروع أمثلة التلاحم والكرم.</p>
+<p>تتميز بموقع استراتيجي وتنوع ثقافي واجتماعي غني يجعلها نبضاً حقيقياً للمنطقة.</p></div>
+<div class="box"><h3>💡 رؤية منصة "كفرشمس الآن"</h3>
+<p>انطلقت المنصة لتكون النافذة الإعلامية والخدمية الأولى لأهالي البلدة: توثيق الأخبار المحلية، ونسج روابط التواصل الاجتماعي، ومساندة التجار وأصحاب الأعمال في الترويج لخدماتهم.</p>
+<div class="hl"><h4>🎯 هدفنا الأساسي</h4><p>تسهيل وصول الخدمات الإعلانية والإخبارية للجميع بشفافية وسرعة وموثوقية.</p></div></div>
+</div></div>
+</section>
 
-    <!-- MAP SECTION -->
-    <section id="map-section" class="section-padding map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>موقع بلدة كفرشمس</h2>
-                <p>قلب حوران النابض بالحياة والتاريخ</p>
-            </div>
-            <div class="map-card-container">
-                <a href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" class="circular-map-preview" aria-label="خريطة كفرشمس">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="كفرشمس">
-                </a>
-                <h3>كفرشمس، درعا، سوريا</h3>
-                <p style="color: var(--text-muted);">انقر على الصورة للاطلاع على تفاصيل الموقع الجغرافي واتجاهات الطرق عبر خرائط جوجل.</p>
-            </div>
-        </div>
-    </section>
+<section id="services" class="alt">
+<div class="c">
+<div class="sh"><h2>خدماتنا الإعلانية والإعلامية</h2><p>نقدم حلولاً متكاملة للأفراد والشركات في كفرشمس</p></div>
+<div class="sg">
+<div class="sc"><div class="em">📰</div><h3>النشر الإعلاني التجاري</h3><p>إعلانات المحلات والشركات والعقارات والخدمات التجارية للوصول إلى أكبر شريحة في البلدة.</p></div>
+<div class="sc"><div class="em">💚</div><h3>المناسبات والأفراح</h3><p>مشاركة أهالي كفرشمس أفراحهم وتهاني الأعراس ومناسباتهم الاجتماعية بكل حب وترابط.</p></div>
+<div class="sc"><div class="em">📣</div><h3>التغطيات الإخبارية</h3><p>نقل المستجدات المحلية والخدمات العامة والفعاليات المجتمعية أولاً بأول.</p></div>
+</div></div>
+</section>
 
-    <!-- PORTFOLIO / GALLERY SECTION -->
-    <section id="portfolio" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>معرض الصور والأعمال</h2>
-                <p>لمحات من حمالات كفرشمس وفعالياتها اليومية</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="معرض 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/bntQ67z/image.png" alt="معرض 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="معرض 3">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="map">
+<div class="c">
+<div class="sh"><h2>موقع بلدة كفرشمس</h2><p>قلب حوران النابض بالحياة والتاريخ</p></div>
+<div class="mc">
+<a href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" rel="noopener" class="mp" aria-label="خريطة كفرشمس"><img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="كفرشمس"></a>
+<h3>كفرشمس، درعا، سوريا</h3>
+<p style="color:var(--mu)">انقر على الصورة لعرض الموقع واتجاهات الطرق في خرائط جوجل.</p>
+</div></div>
+</section>
 
-    <!-- FAQ SECTION -->
-    <section id="faq" class="section-padding why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>الأسئلة الشائعة</h2>
-                <p>إجابات واضحة عن كيفية إرسال الإعلانات والتعامل مع المنصة</p>
-            </div>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>كيف يمكنني إرسال إعلان عبر الموقع؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>ببساطة توجه إلى قسم "التواصل وإرسال الإعلانات" في أسفل الصفحة، واملأ النموذج بالاسم، رقم الهاتف، نوع الخدمة، ونص الإعلان، ثم اضغط على زر إرسال.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>متى يتم نشر إعلاني على صفحة الفيسبوك؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>يصل إعلانك مباشرة إلى نظام المراجعة الداخلي لدينا، وفور اعتماده من الإدارة يتم نشره أوتوماتيكياً على الصفحة الرسمية لـ "كفرشمس الآن".</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">
-                        <span>هل خدمة نشر الإعلانات مجانية؟</span>
-                        <svg class="icon faq-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>نعم، أغلب الخدمات الإعلانية المجتمعية والإخبارية تقدم لدعم أهالي البلدة، ويمكنك التواصل مباشرة مع الإدارة للاستفسار عن الإعلانات المميزة.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="faq" class="alt">
+<div class="c">
+<div class="sh"><h2>الأسئلة الشائعة</h2><p>إجابات واضحة عن كيفية إرسال الإعلانات</p></div>
+<div class="faq">
+<div class="fi"><button class="fh"><span>كيف أرسل إعلانًا عبر الموقع؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
+<div class="fc"><p>اذهب إلى قسم "أرسل إعلانك" أسفل الصفحة، واملأ الاسم والهاتف ونوع الإعلان ونصه، وأرفق صورك (حتى 10 صور) أو فيديو إن وجد، ثم اضغط إرسال.</p></div></div>
+<div class="fi"><button class="fh"><span>متى يُنشر إعلاني على فيسبوك؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
+<div class="fc"><p>يصل إعلانك إلى الإدارة للمراجعة، وفور اعتماده يُنشر تلقائيًا على صفحة "كفرشمس الآن".</p></div></div>
+<div class="fi"><button class="fh"><span>هل خدمة النشر مجانية؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
+<div class="fc"><p>أغلب الإعلانات المجتمعية والإخبارية مجانية دعمًا لأهالي البلدة، وللاستفسار عن الإعلانات المميزة تواصل معنا مباشرة.</p></div></div>
+<div class="fi"><button class="fh"><span>فيديو الإعلان أطول من 100 ميغابايت، ماذا أفعل؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
+<div class="fc"><p>أرسله لنا عبر واتساب من الزر الأخضر في الصفحة وسنتولى نشره.</p></div></div>
+</div></div>
+</section>
 
-    <!-- CONTACT & SUBMISSION SECTION -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>أرسل إعلانك أو تواصل معنا</h2>
-                <p>املأ النموذج أدناه لتصلك خدمتك إلى آلاف المتابعين في كفرشمس</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div>
-                        <h3>معلومات الاتصال</h3>
-                        <p style="margin-bottom: 30px; color: #E2E8F0;">نحن في خدمة أهالي كفرشمس على مدار الساعة. تواصل معنا لأي استفسار أو مقترح.</p>
-                        
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            </div>
-                            <div>
-                                <h4 style="color: var(--secondary); font-size: 0.95rem;">البريد الإلكتروني</h4>
-                                <p style="font-size: 0.95rem;">info@kafrshams.now</p>
-                            </div>
-                        </div>
+<section id="contact">
+<div class="c">
+<div class="sh"><h2>أرسل إعلانك أو تواصل معنا</h2><p>املأ النموذج ليصل إعلانك إلى آلاف المتابعين في كفرشمس</p></div>
+<div class="cg">
+<div class="ci">
+<div>
+<h3>معلومات الاتصال</h3>
+<p style="margin-bottom:30px;color:#E2E8F0">نحن في خدمة أهالي كفرشمس. تواصل معنا لأي استفسار أو مقترح.</p>
+<div class="it"><h4>البريد الإلكتروني</h4><p>info@kafrshams.now</p></div>
+<div class="it"><h4>العنوان</h4><p>درعا - كفرشمس، سوريا</p></div>
+</div>
+<div class="sl">
+<a href="https://www.facebook.com/gaalii1920/" target="_blank" rel="noopener">فيسبوك</a>
+<a href="https://www.instagram.com/kafrshams/" target="_blank" rel="noopener">انستجرام</a>
+<a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" rel="noopener">واتساب</a>
+</div>
+</div>
 
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            </div>
-                            <div>
-                                <h4 style="color: var(--secondary); font-size: 0.95rem;">العنوان</h4>
-                                <p style="font-size: 0.95rem;">درعا - كفرشمس، سوريا</p>
-                            </div>
-                        </div>
-                    </div>
+<div class="fm">
+<div id="ok" class="ok">تم إرسال إعلانك بنجاح! جاري مراجعته ونشره قريباً.</div>
+<form id="adForm">
+<div class="fg"><label for="name">الاسم الكامل</label><input type="text" id="name" class="fc2" placeholder="أدخل اسمك الكريم" required></div>
+<div class="fg"><label for="phone">رقم الهاتف (واتساب)</label><input type="tel" id="phone" class="fc2" placeholder="09xxxxxxxx" required></div>
+<div class="fg"><label for="serviceType">نوع الإعلان</label>
+<select id="serviceType" class="fc2" required>
+<option value="">اختر تصنيف الإعلان</option>
+<option value="إعلان تجاري">إعلان تجاري</option>
+<option value="مناسبة أو فرح">مناسبة أو فرح</option>
+<option value="تخرج أو نجاح">تخرج أو نجاح</option>
+<option value="خبر عام أو خدمة">خبر عام أو خدمة</option>
+<option value="أخرى">أخرى</option>
+</select></div>
+<div class="fg"><label for="message">نص الإعلان أو التفاصيل</label><textarea id="message" rows="5" class="fc2" placeholder="اكتب تفاصيل إعلانك هنا..." required></textarea></div>
+<div class="fg"><label for="images">صور الإعلان (اختياري)</label><input type="file" id="images" class="fc2" accept="image/*" multiple><small class="hint">حتى 10 صور.</small></div>
+<div class="fg"><label for="video">فيديو الإعلان (اختياري)</label><input type="file" id="video" class="fc2" accept="video/*"><small class="hint">حتى 100 ميغابايت. للفيديوهات الأطول أرسلها لنا عبر واتساب.</small></div>
+<div class="hp" aria-hidden="true"><label for="website">اتركه فارغًا</label><input type="text" id="website" tabindex="-1" autocomplete="off"></div>
+<div class="pb" id="pb"><div class="pt"><div class="pr" id="pr"></div></div><span class="px" id="px"></span></div>
+<button type="submit" id="sendBtn" class="btn bp" style="width:100%">إرسال الإعلان الآن</button>
+</form>
+</div>
+</div></div>
+</section>
 
-                    <div class="social-links-box">
-                        <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="social-btn">فيسبوك</a>
-                        <a href="https://www.instagram.com/kafrshams/" target="_blank" class="social-btn">انستجرام</a>
-                        <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="social-btn">واتساب</a>
-                    </div>
-                </div>
+<footer>
+<div class="c">
+<a href="#" class="logo" style="justify-content:center;margin-bottom:15px"><img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن"><span>كفرشمس الآن</span></a>
+<p style="color:var(--mu);max-width:600px;margin:0 auto">المنصة الأولى لنقل نبض كفرشمس: تواصل اجتماعي، إعلانات، وأخبار محلية موثوقة.</p>
+<div class="fl"><a href="#hero">الرئيسية</a><a href="#about">عن البلدة</a><a href="#services">الخدمات</a><a href="#contact">اتصل بنا</a></div>
+<div class="cp">جميع الحقوق محفوظة &copy; 2026 - منصة كفرشمس الآن</div>
+</div>
+</footer>
 
-                <div class="contact-form-card">
-                    <div id="alertsSuccess" class="alert-success">تم إرسال إعلانك بنجاح! جاري مراجعته ونشره قريباً.</div>
-                    
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">الاسم الكامل</label>
-                            <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
-                        </div>
+<button class="top" id="top" aria-label="العودة للأعلى"><svg class="ic"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
-                        <div class="form-group">
-                            <label for="phone">رقم الهاتف (واتساب)</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="09xxxxxxxx" required>
-                        </div>
+<script>
+/* ===== الإعدادات ===== */
+const CLOUD_NAME = 'lqibffwn';            // تأكد منه: Cloudinary > Settings > API Keys
+const UPLOAD_PRESET = 'kafrshams_ads';
+const WEBHOOK_URL = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
+const MAX_IMAGES = 10, MAX_VIDEO_MB = 100, MIN_FILL_SECONDS = 4;
 
-                        <div class="form-group">
-                            <label for="serviceType">نوع الخدمة / التصنيف</label>
-                            <select id="serviceType" class="form-control" required>
-                                <option value="">اختر تصنيف الإعلان</option>
-                                <option value="إعلان تجاري">إعلان تجاري</option>
-                                <option value="مناسبة أو فرح">مناسبة أو فرح</option>
-                                <option value="خبر عام أو خدمة">خبر عام أو خدمة</option>
-                                <option value="أخرى">أخرى</option>
-                            </select>
-                        </div>
+const $ = id => document.getElementById(id);
+const loadedAt = Date.now();
 
-                        <div class="form-group">
-                            <label for="message">نص الإعلان أو التفاصيل</label>
-                            <textarea id="message" rows="5" class="form-control" placeholder="اكتب تفاصيل إعلانك هنا..." required></textarea>
-                        </div>
+/* القائمة والأسئلة والعودة للأعلى */
+const navLinks = $('navLinks');
+$('hamburger').onclick = () => navLinks.classList.toggle('on');
+navLinks.querySelectorAll('a').forEach(a => a.onclick = () => navLinks.classList.remove('on'));
+document.querySelectorAll('.fi').forEach(item => {
+  item.querySelector('.fh').onclick = () => {
+    const open = item.classList.contains('on');
+    document.querySelectorAll('.fi').forEach(i => i.classList.remove('on'));
+    if (!open) item.classList.add('on');
+  };
+});
+window.addEventListener('scroll', () => $('top').classList.toggle('v', scrollY > 300));
+$('top').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
-                        <!-- خانة إرفاق الصور والفيديوهات -->
-                        <div class="form-group">
-                            <label for="mediaFile">إرفاق صورة أو فيديو (اختياري)</label>
-                            <input type="file" id="mediaFile" class="form-control" accept="image/*,video/*" style="padding: 10px;">
-                        </div>
+/* ===== رفع الإعلان ===== */
+const form = $('adForm'), sendBtn = $('sendBtn');
 
-                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">إرسال الإعلان الآن</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+function setProgress(p, text) {
+  $('pb').style.display = 'block';
+  $('pr').style.width = p + '%';
+  $('px').textContent = text;
+}
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <a href="#" class="logo" style="justify-content: center; margin-bottom: 15px;">
-                <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
-                <span>كفرشمس الآن</span>
-            </a>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">المنصة الأولى المخصصة لنقل نبض الشارع في كفرشمس، تواصل اجتماعي، إعلانات، وأخبار محلية موثوقة.</p>
-            
-            <div class="footer-links">
-                <a href="#hero">الرئيسية</a>
-                <a href="#about">عن البلدة</a>
-                <a href="#services">الخدمات</a>
-                <a href="#contact">اتصل بنا</a>
-            </div>
+// تصغير الصورة (أقصى بعد 1920px) لتبقى أقل من 10MB
+function compressImage(file, maxSide = 1920, quality = 0.85) {
+  return new Promise(resolve => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const k = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const cv = document.createElement('canvas');
+      cv.width = Math.round(img.width * k);
+      cv.height = Math.round(img.height * k);
+      cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+      cv.toBlob(b => { URL.revokeObjectURL(url); resolve(b && b.size < file.size ? b : file); }, 'image/jpeg', quality);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+    img.src = url;
+  });
+}
 
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة © 2026 - منصة كفرشمس الآن</p>
-            </div>
-        </div>
-    </footer>
+function upload(file, type, onProgress) {
+  return new Promise((resolve, reject) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', UPLOAD_PRESET);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/${type}/upload`);
+    xhr.upload.onprogress = e => e.lengthComputable && onProgress(e.loaded / e.total);
+    xhr.onload = () => {
+      try {
+        const r = JSON.parse(xhr.responseText);
+        if (xhr.status < 300 && r.secure_url) resolve(r.secure_url);
+        else reject(new Error((r.error && r.error.message) || 'فشل رفع الملف'));
+      } catch (e) { reject(new Error('فشل رفع الملف')); }
+    };
+    xhr.onerror = () => reject(new Error('انقطع الاتصال أثناء رفع الملف'));
+    xhr.send(fd);
+  });
+}
 
-    <!-- BACK TO TOP BUTTON -->
-    <button class="back-to-top" id="backToTopBtn" aria-label="العودة للأعلى">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-    </button>
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if ($('website').value) return;                                   // بوت
+  if ((Date.now() - loadedAt) / 1000 < MIN_FILL_SECONDS) { alert('يرجى المحاولة مرة أخرى بعد لحظات.'); return; }
 
-    <!-- JAVASCRIPT: CLOUDINARY & MAKE.COM WEBHOOK INTEGRATION -->
-    <script>
-        const WEBHOOK_URL = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
-        const CLOUD_NAME = 'lqibffwn';
-        const UPLOAD_PRESET = 'kafrshams_ads';
+  const images = [...$('images').files], video = $('video').files[0];
+  if (images.length > MAX_IMAGES) return alert(`الحد الأقصى ${MAX_IMAGES} صور.`);
+  if (images.some(f => !f.type.startsWith('image/'))) return alert('خانة الصور تقبل الصور فقط.');
+  if (video && !video.type.startsWith('video/')) return alert('خانة الفيديو تقبل ملفات الفيديو فقط.');
+  if (video && video.size > MAX_VIDEO_MB * 1048576)
+    return alert(`حجم الفيديو أكبر من ${MAX_VIDEO_MB} ميغابايت. للفيديوهات الأطول أرسلها لنا عبر واتساب.`);
 
-        // FAQ Accordion Toggle
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const header = item.querySelector('.faq-header');
-            header.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isOpen) {
-                    item.classList.add('active');
-                }
-            });
-        });
+  sendBtn.disabled = true;
+  sendBtn.textContent = 'جاري الإرسال...';
+  try {
+    const total = images.length + (video ? 1 : 0);
+    const imageUrls = [];
+    let done = 0;
 
-        // Back to Top Button Logic
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    for (let i = 0; i < images.length; i++) {
+      const label = `جاري رفع الصورة ${i + 1} من ${images.length}...`;
+      setProgress(Math.round(done / total * 100), label);
+      const blob = await compressImage(images[i]);
+      imageUrls.push(await upload(blob, 'image', p => setProgress(Math.round((done + p) / total * 100), label)));
+      done++;
+    }
 
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.getElementById('navLinks');
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
+    let videoUrl = '';
+    if (video) {
+      const label = 'جاري رفع الفيديو (قد يستغرق دقيقة)...';
+      setProgress(Math.round(done / total * 100), label);
+      videoUrl = await upload(video, 'video', p => setProgress(Math.round((done + p) / total * 100), label));
+    }
 
-        // Form Submission with Cloudinary Integration
-        const contactForm = document.getElementById('contactForm');
-        const alertsSuccess = document.getElementById('alertsSuccess');
-        const submitBtn = document.getElementById('submitBtn');
+    setProgress(100, 'جاري إرسال الإعلان...');
+    const data = new FormData();            // نص وروابط فقط، بدون ملفات
+    data.append('name', $('name').value);
+    data.append('phone', $('phone').value);
+    data.append('serviceType', $('serviceType').value);
+    data.append('message', $('message').value);
+    data.append('images', imageUrls.join(','));
+    data.append('video', videoUrl);
 
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    const res = await fetch(WEBHOOK_URL, { method: 'POST', body: data });
+    if (!res.ok) throw new Error('تعذر إرسال الإعلان، حاول مرة أخرى.');
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'جاري رفع الملفات إلى السحابة...';
-            alertsSuccess.style.display = 'none';
-
-            try {
-                let mediaUrl = '';
-                const mediaFileInput = document.getElementById('mediaFile');
-
-                // إذا تم اختيار ملف (صورة أو فيديو)، يتم رفعه إلى Cloudinary أولاً
-                if (mediaFileInput.files.length > 0) {
-                    const file = mediaFileInput.files[0];
-                    const formData = new FormData();
-                    formData.append('file', file);
-                    formData.append('upload_preset', UPLOAD_PRESET);
-
-                    // تحديد ما إذا كان الملف صورة أو فيديو لتوجيهه للرابط الصحيح في السحابة
-                    const resourceType = file.type.startsWith('video') ? 'video' : 'image';
-
-                    const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/${resourceType}/upload`, {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const uploadData = await uploadRes.json();
-                    if (uploadData.secure_url) {
-                        mediaUrl = uploadData.secure_url;
-                    }
-                }
-
-                // تجهيز البيانات وإرسال الروابط النصية الخفيفة فقط للويب هوك (حل مشكلة 1MB و 413)
-                const payload = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    serviceType: document.getElementById('serviceType').value,
-                    message: document.getElementById('message').value,
-                    mediaUrl: mediaUrl // رابط الملف النصي النظيف
-                };
-
-                const response = await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.ok) {
-                    alertsSuccess.style.display = 'block';
-                    contactForm.reset();
-                    alertsSuccess.scrollIntoView({ behavior: 'smooth' });
-                    setTimeout(() => {
-                        alertsSuccess.style.display = 'none';
-                    }, 5000);
-                } else {
-                    alert('حدث خطأ أثناء إرسال البيانات، يرجى المحاولة مرة أخرى.');
-                }
-
-            } catch (error) {
-                console.error('Error:', error);
-                alert('تعذر الاتصال بالخادم أو رفع الملف، يرجى التحقق من اتصال الإنترنت.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'إرسال الإعلان الآن';
-            }
-        });
-    </script>
+    $('ok').style.display = 'block';
+    $('ok').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    form.reset();
+    setTimeout(() => $('ok').style.display = 'none', 6000);
+  } catch (err) {
+    console.error(err);
+    alert(err.message || 'حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'إرسال الإعلان الآن';
+    $('pb').style.display = 'none';
+    $('pr').style.width = '0';
+  }
+});
+</script>
 </body>
 </html>
