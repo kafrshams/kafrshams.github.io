@@ -1497,27 +1497,46 @@
             observer.observe(statsSection);
         }
 
-        // Contact Form Direct WhatsApp Integration
-        const contactForm = document.getElementById('contactForm');
-        const alertSuccess = document.getElementById('alertSuccess');
+// إرسال الإعلان مباشرة من موقعك إلى Make.com Webhook
+const contactForm = document.getElementById('contactForm');
+const alertsSuccess = document.getElementById('alertsSuccess');
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const serviceType = document.getElementById('serviceType').value;
-            const message = document.getElementById('message').value;
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        serviceType: document.getElementById('serviceType').value,
+        message: document.getElementById('message').value
+    };
 
-            const waMessage = `مرحباً، أود طلب خدمة إعلانية:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- النوع: ${serviceType}%0A- التفاصيل: ${message}`;
-            
-            alertSuccess.style.display = 'block';
-            
-            setTimeout(() => {
-                window.open(`https://wa.me/963994882752?text=${waMessage}`, '_blank');
-                alertSuccess.style.display = 'none';
-                contactForm.reset();
-            }, 1200);
+    try {
+        // استبدل هذا الرابط برابط الـ Webhook الخاص بك من Make.com
+        const webhookUrl = 'YOUR_MAKE_WEBHOOK_URL_HERE';
+        
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         });
+
+        if (response.ok) {
+            alertsSuccess.style.display = 'block';
+            contactForm.reset();
+            setTimeout(() => {
+                alertsSuccess.style.display = 'none';
+            }, 4000);
+        } else {
+            alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
+        }
+    } catch (error) {
+        console.error('Error:',- error);
+        alert('تعذر الاتصال بالخادم.');
+    }
+});
     </script>
 </body>
 </html>
