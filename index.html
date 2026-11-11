@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كفرشمس الآن - المنصة الإخبارية والخدمية الأولى لمدينة كفرشمس</title>
+    <meta name="description" content="منصة كفرشمس الآن: التغطية الشاملة لأخبار بلدة كفرشمس في حوران، مشاركة الأفراح والمناسبات، وتقديم الخدمات الإعلانية والتجارية للبلدة.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="كفرشمس الآن - المنصة الإخبارية والخدمية">
+    <meta property="og:description" content="المنصة الإخبارية والخدمية والتجارية لبلدة كفرشمس في درعا. تابع الأخبار المحلية والإعلانات والمناسبات السعيدة.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon Mapped -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bntQ67z/image.png">
+
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1B4D3E;
+            --primary-hover: #143B2F;
+            --primary-light: #E8F0EC;
+            --secondary: #D4AF37;
+            --secondary-hover: #B5932B;
+            
+            --bg-body: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --bg-nav: rgba(255, 255, 255, 0.95);
+            
+            --text-main: #2C3E50;
+            --text-muted: #7F8C8D;
+            --border-color: #E2E8F0;
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.07);
+            --shadow-lg: 0 12px 30px rgba(0,0,0,0.1);
+            
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary: #256D58;
+            --primary-hover: #1E5948;
+            --primary-light: #162621;
+            --secondary: #E5C158;
+            
+            --bg-body: #121212;
+            --bg-card: #1A1A1A;
+            --bg-nav: rgba(26, 26, 26, 0.95);
+            
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border-color: #2D3748;
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 30px rgba(0,0,0,0.5);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            text-align: right;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo span {
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        [data-theme="dark"] .btn-secondary {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* NAVBAR WITH LOGO STYLING */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--bg-nav);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 85px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .site-logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* TOP HEADER SOCIAL ICONS */
+        .top-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .top-social-btn:hover {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 190px 0 120px 0;
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.94), rgba(20, 59, 47, 0.9)), url('https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary);
+            display: block;
+            margin-top: 5px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #E2E8F0;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-card {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .hero-card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .hero-card p {
+            color: var(--text-muted);
+        }
+
+        /* ABOUT SECTION & HISTORY */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .about-card-box {
+            background-color: var(--bg-card);
+            padding: 35px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+
+        .about-card-box h3 {
+            font-size: 1.7rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card-box p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .history-highlights {
+            background-color: var(--primary-light);
+            border-right: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-top: 20px;
+        }
+
+        .history-highlights h4 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .history-highlights p {
+            color: var(--text-main);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background-color: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 5px;
+            direction: ltr;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* WHY US */
+        .why-us {
+            background-color: var(--primary-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-icon-wrapper {
+            width: 75px;
+            height: 75px;
+            background: var(--primary);
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* PORTFOLIO & GALLERY */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .portfolio-thumb {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 3.5rem;
+        }
+
+        .portfolio-body {
+            padding: 25px;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-body h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .portfolio-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* MAP SECTION STYLING (UPDATED WITH LOCAL MAP ZOOM) */
+        .map-section {
+            background-color: var(--primary-light);
+            text-align: center;
+        }
+
+        .map-card-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circular-map-preview {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--secondary);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .circular-map-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .circular-map-preview:hover img {
+            transform: scale(1.1);
+        }
+
+        .circular-map-preview::after {
+            content: 'انقر لتحديد الاتجاهات';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(27, 77, 62, 0.85);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 0;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .circular-map-preview:hover::after {
+            opacity: 1;
+        }
+
+        /* FAQ ACCORDION */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            width: 100%;
+            padding: 20px 25px;
+            background: none;
+            border: none;
+            text-align: right;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-content {
+            padding: 0 25px 25px 25px;
+            max-height: 250px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 45px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-detail-icon:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .social-links-box {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary);
+        }
+
+        .contact-form-card {
+            background-color: var(--bg-card);
+            padding: 45px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.12);
+        }
+
+        .alert-success {
+            display: none;
+            background-color: #D4EDDA;
+            color: #155724;
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* FLOATING WHATSAPP BUTTON (FOR ADS MANAGER) */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 35px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFFFFF;
+            border-radius: 50px;
+            padding: 12px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1EBE5D;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+            color: #FFFFFF;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 25px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            margin-top: 25px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 85px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 85px);
+                background-color: var(--bg-card);
+                flex-direction: column;
+                padding: 40px;
+                transition: 0.3s ease;
+                box-shadow: var(--shadow-lg);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .whatsapp-float span {
+                display: none;
+            }
+            .whatsapp-float {
+                padding: 14px;
+                border-radius: 50%;
+                bottom: 25px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING WHATSAPP BUTTON (COMMUNICATE WITH ADS MANAGER) -->
+    <a href="https://wa.me/963994882752" class="whatsapp-float" target="_blank" aria-label="تواصل مع مسؤول الإعلانات عبر واتساب">
+        <svg class="icon" style="width:26px;height:26px;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.149 4.198 4.292-1.127z"/></svg>
+        <span>تواصل مع مسؤول الإعلانات</span>
+    </a>
+
+    <!-- 1. NAVBAR WITH REAL LOGO AND TOP SOCIAL ICONS -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
+                <span>كفرشمس الآن</span>
+            </a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#about">عن كفرشمس والتاريخ</a></li>
+                    <li><a href="#services">خدمات الإعلانات</a></li>
+                    <li><a href="#map-section">موقع البلدة</a></li>
+                    <li><a href="#portfolio">الأعمال والمعرض</a></li>
+                    <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    <li><a href="#contact">التواصل</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <!-- Top Header Social Icons -->
+                <div class="top-social-icons">
+                    <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="top-social-btn" title="فيسبوك">📘</a>
+                    <a href="https://www.instagram.com/kafrshams/" target="_blank" class="top-social-btn" title="انستجرام">📷</a>
+                    <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="top-social-btn" title="قناة الواتساب">💬</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-1.16 1.76-3.12 2.92-5.36 2.92-3.58 0-6.5-2.92-6.5-6.5 0-2.24 1.16-4.2 2.92-5.36-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </button>
+                <a href="#contact" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">أعلن معنا</a>
+                <button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>منصة كفرشمس الآن <span>نبض حوران وصوت البلد</span></h1>
+                        <p>المنصة الإخبارية والخدمية الأولى لبلدة كفرشمس العريقة. نرافقكم في نقل الأخبار المحلية، توثيق تاريخها النضالي، مشاركة الأفراح والتخرجات، وتقديم الحلول الإعلانية المتكاملة.</p>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-secondary" style="border-color: #fff; color: #fff;">تاريخ وأصل البلدة</a>
+                            <a href="#services" class="btn btn-primary">استعرض الخدمات</a>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-icon">
+                            <svg class="icon" style="width:40px;height:40px" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <h3>خدمة الإعلانات والتهاني</h3>
+                        <p>نصل بأخباركم وإعلاناتكم التجارية إلى أهالي البلدة والمغتربين.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ABOUT KAFR SHAMS & DETAILED HISTORY -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>عن بلدة كفرشمس العريقة</h2>
+                    <p>أصالة التاريخ، العمق الحضاري، وبطولات الإنسان في شمال محافظة درعا - حوران</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card-box">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            الموقع الجغرافي والجذور التاريخية العميقة
+                        </h3>
+                        <p>تعتبر بلدة <strong>كفرشمس</strong> درة المدن والبلدات التاريخية في شمال محافظة درعا ضمن سهل حوران الأبيّ بجنوب سوريا. تتميز بموقع جغرافي استراتيجي فريد على مفترق طرق حيوي يربط بين محافظات درعا والقنيطرة وريف دمشق، وتحديداً عند بوابة منطقة "مثلث الموت".</p>
+                        <p>يعود أصل التسمية إلى الجذور السريانية والآرامية القديمة (حيث تعني كلمة "كفر" القرية أو المزرعة). وتشهد الآثار العريقة والديرين التاريخيين والأقواس الرومانية والغسانية المتناثرة فيها على أن الأرض كانت معقلاً لحضارات زراعية واستيطانية كبرى امتدت لآلاف السنين.</p>
+                    </div>
+
+                    <div class="about-card-box">
+                        <h3>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                            كفرشمس في الثورة السورية والملاحم النضالية
+                        </h3>
+                        <p>سطر أبناء كفرشمس ملاحم بطولية خالدة منذ انطلاقة الثورة السورية في 23 آذار 2011؛ إذ كان للبلدة السبق في الخروج بمظاهرات عارمة نصرةً لدرعا المهد، وتأكيداً على وحدة النبض الثوري في حوران.</p>
+                        
+                        <div class="history-highlights">
+                            <h4>بطولات مثلث الموت ومعارك التحرير</h4>
+                            <p>شهدت البلدة أعتى المعارك وأنقى صور الصمود الأسطوري بوجه قوى النظام والميليشيات الطائفية، مروراً بمعارك العز في "عاصفة حوران"، وصولاً إلى معركة التحرير الكبرى التي كُللت بتطهير البلدة بالكامل في نيسان 2015. لقد قدمت كفرشمس كوكبة من خيرة أبنائها وقادتها شهداء أطهاراً روت دماؤهم الزكية تراب الوطن الطاهر دفاعاً عن الكرامة والحرية.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATS COUNTER -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="65000">0</div>
+                        <div class="stat-label">متابع نشط</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1500">0</div>
+                        <div class="stat-label">مناسبة وإعلان منشور</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">تغطية إخبارية واجتماعية %</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">ساعة خدمة وتواصل</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVICES SECTION -->
+        <section id="services" class="section-padding" style="background-color: var(--bg-card);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>خدمات منصة كفرشمس الآن</h2>
+                    <p>نغطي الأنشطة التجارية والإعلانية والمناسبات السعيدة بكل احترافية</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                        </div>
+                        <h3>إعلانات المحلات والمتاجر</h3>
+                        <p>تصوير ونشر إعلانات المحلات التجارية، الشركات، والمشاريع الاقتصادية في البلدة لضمان وصولها لكافة الأهالي.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+                        </div>
+                        <h3>عرض العقارات والسيارات</h3>
+                        <p>منصة مخصصة لعرض العقارات (بيع، شراء، إيجار)، الأراضي الزراعية، والسيارات بدقة واحترافية عالية.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <h3>تغطية الأفراح والمناسبات</h3>
+                        <p>مشاركة الأهالي لحظات الفرح والأعراس والتخرج والتهاني بأرقى التصاميم والقوالب الإعلامية.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        </div>
+                        <h3>الإعلانات العامة والخدمية</h3>
+                        <p>نشر التنويهات، المبادرات المجتمعية، والأخبار الخدمية العامة التي تهم مصلحة أهالي البلدة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INTERACTIVE MAP SECTION (UPDATED WITH REGIONAL MAP ZOOM ON KAFR SHAMS) -->
+        <section id="map-section" class="section-padding map-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>موقع بلدة كفرشمس الجغرافي</h2>
+                    <p>انقر على الخريطة الدائرية أدناه لفتح خرائط جوجل وتحديد الاتجاه المباشر إلى مركز البلدة</p>
+                </div>
+                <div class="map-card-container">
+                    <a href="https://maps.google.com/?q=Kafr+Shams,+Syria" target="_blank" class="circular-map-preview" aria-label="خريطة موقع كفرشمس">
+                        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80" alt="خريطة منطقة كفرشمس">
+                    </a>
+                    <h3 style="color: var(--primary); font-size: 1.3rem;">سوريا - درعا - كفرشمس</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">هل أنت خارج البلدة؟ اضغط على الزر أدناه لمعرفة الاتجاهات وحساب مسافة الطريق الحالية إلينا عبر خرائط جوجل.</p>
+                    <a href="https://maps.google.com/?q=Kafr+Shams,+Syria" target="_blank" class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        افتح الاتجاهات في Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WHY CHOOSE US -->
+        <section id="why-us" class="section-padding why-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>لماذا تختار منصة كفرشمس الآن؟</h2>
+                    <p>النافذة الأوثق والأكثر انتشاراً لتسويق إعلانك والوصول للجمهور مباشرة</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h3>جمهور واسع ومستهدف</h3>
+                        <p>نصل إلى آلاف المتابعين من أبناء كفرشمس في الداخل والمغتربين المهتمين بأخبار ومحلات البلدة.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>مصداقية وسرعة في النشر</h3>
+                        <p>دقة تامة في نقل المعلومات والتعامل مع الإعلانات والمناسبات باحترافية تامة وسرعة في الطرح.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <h3>تصاميم بصرية مميزة</h3>
+                        <p>صياغة وإخراج الإعلانات بقوالب بصرية جذابة تضمن لفت انتباه المتابعين وتحقيق أهدافها.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PORTFOLIO & REAL PHOTO GALLERY -->
+        <section id="portfolio" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>معرض الأعمال وتغطيات البلدة</h2>
+                    <p>أمثلة واضحة وتصاميم مخصصة للمناسبات والإعلانات ومعرض صور بلدة كفرشمس الحقيقية</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1B4D3E, #256D58);">💍</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">أعراس ومناسبات سعيدة</span>
+                            <h4>بطاقات الأفراح وحفلات الزفاف</h4>
+                            <p>تصاميم ملكية راقية وبطاقات مباركة مخصصة للأفراح والأعراس في البلدة بأسلوب فني رفيع.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #D4AF37, #B5932B);">🎓</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">تهاني التخرج</span>
+                            <h4>حفلات التخرج والنجاح الأكاديمي</h4>
+                            <p>مشاركة الفرحة مع الخريجين والجامعيين ببروموهات وتصاميم تهنئة متميزة ومبتكرة.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #143B2F, #D4AF37);">🏢</div>
+                        <div class="portfolio-body">
+                            <span class="portfolio-tag">إعلانات تجارية</span>
+                            <h4>ترويج المحلات والشركات</h4>
+                            <p>محتوى تسويقي وإعلانات مبوبة واحترافية تبرز هوية المحل التجاري وتزيد مبيعاته.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALLERY GRID WITH REAL USER UPLOADED IMAGES -->
+                <h3 style="margin-top: 50px; text-align: center; color: var(--primary);">معرض صور بلدة كفرشمس</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://i.ibb.co/tTc7Hsgt/151835261-4232202530127204-1556384445950969202-n.jpg" alt="صورة من كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/ZRf4v0d9/490282274-24032839582970205-3763014942639953907-n.jpg" alt="معالم كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/4hp46QT/483961504-1045831407566980-905811826123881682-n.jpg" alt="معالم ومعمار كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/hRypwShC/484649414-1048412620642192-924841885796921824-n.jpg" alt="لقطة من كفرشمس"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/T5yYwrm/img1-jpg.jpg" alt="صورة إضافية من كفرشمس"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ SECTION -->
+        <section id="faq" class="section-padding" style="background-color: var(--bg-card);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>الأسئلة الشائعة</h2>
+                    <p>إجابات واضحة حول آلية نشر الإعلانات والمناسبات في الصفحة</p>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>كيف يمكنني نشر إعلان تجاري أو تهنئة في صفحة كفرشمس الآن؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>يمكنك التواصل المباشر مع مسؤول الإعلانات عبر النقر على زر الواتساب العائم أو الإيميل <a href="mailto:kafrshams4@gmail.com" style="color:var(--primary); font-weight:700; text-decoration:underline;">kafrshams4@gmail.com</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>ما هي سياسة نشر الإعلانات والمناسبات؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>الإعلانات التجارية والمناسبات تخضع للتنسيق مع إدارة الصفحة وفق المعايير المحددة لضمان الجودة والوصول الأمثل للجمهور المستهدف.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>ما هي الطرق الرسمية المعتمدة للتواصل مع الإدارة؟</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>التواصل يتم عبر <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:underline;">قناة الواتساب</a> أو صفحاتنا الرسمية على فيسبوك وتليجرام.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CONTACT SECTION -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>تواصل معنا وطلب الإعلانات</h2>
+                    <p>يسعدنا خدمتكم والتواصل معكم دائماً لنشر إعلاناتكم ومناسباتكم السعيدة</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div>
+                            <h3>بيانات التواصل المباشر</h3>
+                            <p style="margin-bottom: 25px;">يرجى التواصل مع إدارة صفحة كفرشمس الآن عبر منصاتنا الرسمية التالية:</p>
+
+                            <div class="contact-detail-item">
+                                <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="contact-detail-icon" aria-label="قناة الواتساب">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </a>
+                                <div>
+                                    <strong>قناة الواتساب الرسمية:</strong>
+                                    <p><a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">انضم للقناة الآن</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <a href="mailto:kafrshams4@gmail.com" class="contact-detail-icon" aria-label="إرسال بريد إلكتروني">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </a>
+                                <div>
+                                    <strong>البريد الإلكتروني:</strong>
+                                    <p><a href="mailto:kafrshams4@gmail.com" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">kafrshams4@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Buttons Box -->
+                            <div class="social-links-box">
+                                <a href="https://www.facebook.com/gaalii1920/" target="_blank" class="social-btn">📘 فيسبوك</a>
+                                <a href="https://www.instagram.com/kafrshams/" target="_blank" class="social-btn">📷 انستجرام</a>
+                                <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" class="social-btn">💬 واتساب</a>
+                            </div>
+                        </div>
+
+                        <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" class="btn btn-whatsapp" target="_blank" style="margin-top: 25px; background-color: #25D366; color: #fff;">
+                            الانضمام لقناة الواتساب الرسمية
+                        </a>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <div class="alert-success" id="alertSuccess">
+                            تم تجهيز طلبك! سيتم تحويلك الآن لمراسلة مسؤول الإعلانات عبر الواتساب...
+                        </div>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">الاسم الكريم</label>
+                                <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكامل" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف / الواتساب</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+963..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceType">نوع الخدمة المطلوبة</label>
+                                <select id="serviceType" class="form-control">
+                                    <option value="تجاري">إعلان تجاري / محلات</option>
+                                    <option value="مناسبة">مناسبة سعيدة / فرح / تخرج</option>
+                                    <option value="عقارات">عقارات / سيارات</option>
+                                    <option value="آخر">استفسار عام</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">تفاصيل الإعلان أو الرسالة</label>
+                                <textarea id="message" rows="4" class="form-control" placeholder="اكتب تفاصيل إعلانك أو رسالتك هنا..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الطلب عبر الواتساب</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 15px;">
+                <img src="https://i.ibb.co/bntQ67z/image.png" alt="كفرشمس الآن" class="site-logo-img">
+                <span>كفرشمس الآن</span>
+            </div>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">المنصة الإخبارية والخدمية الأولى لبلدة كفرشمس في حوران - سوريا</p>
+            
+            <div class="footer-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#about">عن البلدة</a>
+                <a href="#services">الخدمات</a>
+                <a href="#map-section">موقع البلدة</a>
+                <a href="#contact">التواصل</a>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة &copy; <span id="year"></span> منصة <strong>كفرشمس الآن</strong>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">▲</button>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        const counters = document.querySelectorAll('.stat-number');
+        let animated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const speed = 200;
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString('en-US');
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const statsSection = document.querySelector('.stats-grid');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !animated) {
+                animateCounters();
+                animated = true;
+            }
+        }, { threshold: 0.5 });
+
+        if(statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Contact Form Direct WhatsApp Integration
+        const contactForm = document.getElementById('contactForm');
+        const alertSuccess = document.getElementById('alertSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const message = document.getElementById('message').value;
+
+            const waMessage = `مرحباً، أود طلب خدمة إعلانية:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- النوع: ${serviceType}%0A- التفاصيل: ${message}`;
+            
+            alertSuccess.style.display = 'block';
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/963994882752?text=${waMessage}`, '_blank');
+                alertSuccess.style.display = 'none';
+                contactForm.reset();
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
