@@ -283,7 +283,7 @@ const CLOUD_NAME = 'lqibffwn';
 const UPLOAD_PRESET = 'kafrshams_ads';
 /* رابط الـ Webhook الخاص بسيناريو الاستقبال (Ads intake) */
 const WEBHOOK_URL = 'https://hook.eu1.make.com/6qigsxd446jzbqt81zc8f5sy22oetg6j';
-const MAX_IMAGES = 10, MAX_VIDEO_MB = 100, MIN_FILL_SECONDS = 4;
+const MAX_IMAGES = 10, MAX_VIDEOS = 3, MAX_VIDEO_MB = 100, MIN_FILL_SECONDS = 4;
 
 const $ = id => document.getElementById(id);
 const loadedAt = Date.now();
@@ -359,17 +359,17 @@ form.addEventListener('submit', async e => {
   if (!/^https:\/\/hook\./.test(WEBHOOK_URL)) { alert('لم يتم ضبط رابط الإرسال بعد. تواصل مع إدارة الموقع.'); return; }
   if ((Date.now() - loadedAt) / 1000 < MIN_FILL_SECONDS) { alert('يرجى المحاولة مرة أخرى بعد لحظات.'); return; }
 
-  const images = [...$('images').files], video = $('video').files[0];
+  const images = [...$('images').files], videos = [...$('video').files];
   if (images.length > MAX_IMAGES) return alert(`الحد الأقصى ${MAX_IMAGES} صور.`);
   if (images.some(f => !f.type.startsWith('image/'))) return alert('خانة الصور تقبل الصور فقط.');
-  if (video && !video.type.startsWith('video/')) return alert('خانة الفيديو تقبل ملفات الفيديو فقط.');
-  if (video && video.size > MAX_VIDEO_MB * 1048576)
-    return alert(`حجم الفيديو أكبر من ${MAX_VIDEO_MB} ميغابايت. للفيديوهات الأطول أرسلها لنا عبر واتساب.`);
+  if (videos.length > MAX_VIDEOS) return alert(`الحد الأقصى ${MAX_VIDEOS} فيديوهات.`);
+if (videos.some(v => !v.type.startsWith('video/'))) return alert('خانة الفيديو تقبل ملفات الفيديو فقط.');
+if (videos.some(v => v.size > MAX_VIDEO_MB * 1048576)) return alert(`حجم الفيديو أكبر من ${MAX_VIDEO_MB} ميغابايت. للفيديوهات الأطول أرسلها لنا عبر واتساب.`);
 
   sendBtn.disabled = true;
   sendBtn.textContent = 'جاري الإرسال...';
   try {
-    const total = images.length + (video ? 1 : 0);
+    const total = images.length + videos.length;
     const imageUrls = [];
     let done = 0;
 
@@ -381,12 +381,13 @@ form.addEventListener('submit', async e => {
       done++;
     }
 
-    let videoUrl = '';
-    if (video) {
-      const label = 'جاري رفع الفيديو (قد يستغرق دقيقة)...';
-      setProgress(Math.round(done / total * 100), label);
-      videoUrl = await upload(video, 'video', p => setProgress(Math.round((done + p) / total * 100), label));
-    }
+    const videoUrls = [];
+for (let i = 0; i < videos.length; i++) {
+  const label = `جاري رفع الفيديو ${i + 1} من ${videos.length} (قد يستغرق دقيقة)...`;
+  setProgress(Math.round(done / total * 100), label);
+  videoUrls.push(await upload(videos[i], 'video', p => setProgress(Math.round((done + p) / total * 100), label)));
+  done++;
+}
 
     setProgress(100, 'جاري إرسال الإعلان...');
     const data = new FormData();            // نص وروابط فقط، بدون ملفات
@@ -395,7 +396,7 @@ form.addEventListener('submit', async e => {
     data.append('serviceType', $('serviceType').value);
     data.append('message', $('message').value);
     data.append('images', imageUrls.join(','));
-    data.append('video', videoUrl);
+    data.append('video', videoUrls.join(','));
 
     const res = await fetch(WEBHOOK_URL, { method: 'POST', body: data });
     if (!res.ok) throw new Error('تعذر إرسال الإعلان، حاول مرة أخرى.');
