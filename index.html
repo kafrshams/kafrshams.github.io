@@ -15,7 +15,7 @@
 <style>
 :root{--p:#1B4D3E;--ph:#143B2F;--pl:#E8F0EC;--s:#D4AF37;--bg:#FAFAFA;--card:#fff;--tx:#2C3E50;--mu:#7F8C8D;--bd:#E2E8F0;--sh:0 6px 20px rgba(0,0,0,.07);--r:14px}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--tx);line-height:1.8;direction:rtl;text-align:right;overflow-x:hidden}
 a{text-decoration:none;color:inherit}ul{list-style:none}
 .c{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -31,7 +31,7 @@ section{padding:90px 0}
 .bp:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .bs{border-color:var(--p);color:var(--p)}.bs:hover{background:var(--p);color:#fff}
 /* navbar */
-.nav{position:fixed;top:0;right:0;width:100%;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+.nav{position:fixed;top:0;right:0;width:100%;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
 .nav .c{display:flex;align-items:center;justify-content:space-between;height:85px}
 .logo{display:flex;align-items:center;gap:10px;font-size:1.25rem;font-weight:900;color:var(--p)}
 .logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--s)}
@@ -60,7 +60,7 @@ section{padding:90px 0}
 .box p{color:var(--mu);margin-bottom:15px;text-align:justify}
 .hl{background:var(--pl);border-right:4px solid var(--s);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
 .hl h4{color:var(--p);margin-bottom:8px}.hl p{color:var(--tx);margin:0}
-.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:25px}
 .sc{background:var(--card);padding:35px 25px;border-radius:var(--r);border:1px solid var(--bd);transition:.3s}
 .sc:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:var(--p)}
 .sc .em{width:65px;height:65px;background:var(--pl);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:20px}
@@ -73,8 +73,8 @@ section{padding:90px 0}
 /* faq */
 .faq{max-width:800px;margin:0 auto}
 .fi{background:var(--card);border:1px solid var(--bd);border-radius:8px;margin-bottom:15px;overflow:hidden}
-.fh{width:100%;padding:20px 25px;background:none;border:none;text-align:right;font:700 1.15rem 'Tajawal',sans-serif;color:var(--tx);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.fh .ic{color:var(--p);transition:.3s}.fi.on .ic{transform:rotate(180deg)}
+.fh{width:100%;padding:20px 25px;background:none;border:none;text-align:right;font:700 1.15rem 'Tajawal',sans-serif;color:var(--tx);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.fh .ic{color:var(--p);transition:.3s;flex-shrink:0}.fi.on .ic{transform:rotate(180deg)}
 .fc{max-height:0;overflow:hidden;transition:.3s;padding:0 25px;color:var(--mu)}
 .fi.on .fc{max-height:250px;padding:0 25px 25px}
 /* contact */
@@ -109,14 +109,26 @@ footer{background:var(--card);border-top:1px solid var(--bd);padding:60px 0 25px
 .top.v{opacity:1;visibility:visible}
 @media(max-width:992px){.hg,.grid2,.cg{grid-template-columns:1fr}}
 @media(max-width:768px){
-.hamburger{display:block}
-.links{position:fixed;top:85px;right:-100%;width:100%;height:calc(100vh - 85px);background:var(--card);flex-direction:column;padding:40px;transition:.3s}
-.links.on{right:0}
-.hero h1{font-size:2.3rem}
+.nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+.nav .c{height:70px;padding:0 14px}
+.logo{font-size:1.05rem;gap:8px;min-width:0}
+.logo img{width:36px;height:36px}
+.acts .soc{display:none}
+.hamburger{display:block;font-size:1.8rem;padding:8px 12px}
+.links{position:fixed;top:70px;right:0;left:0;width:100%;height:auto;max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;background:var(--card);flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 30px;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility .3s;box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.links.on{transform:none;visibility:visible}
+.links li a{display:block;padding:14px 4px;border-bottom:1px solid var(--bd);font-size:1.05rem}
+.hero{padding:130px 0 80px}
+.hero h1{font-size:2.1rem}
+.hero p.lead{font-size:1.05rem}
+.sh h2{font-size:1.8rem}
 .wa span{display:none}
-.wa{padding:14px;border-radius:50%;bottom:25px;right:20px}
-.fm,.ci{padding:28px}
-section{padding:70px 0}
+.wa{padding:14px;border-radius:50%;bottom:20px;right:16px}
+.top{bottom:20px;left:16px}
+.fm,.ci,.box{padding:24px}
+section{padding:60px 0}
+.fc2{font-size:16px}
+.mc{padding:28px 20px}
 }
 </style>
 </head>
@@ -147,7 +159,7 @@ section{padding:70px 0}
 <a href="https://www.facebook.com/gaalii1920/" target="_blank" rel="noopener" class="soc" aria-label="فيسبوك"><svg><use href="#i-fb"/></svg></a>
 <a href="https://www.instagram.com/kafrshams/" target="_blank" rel="noopener" class="soc" aria-label="انستجرام"><svg><use href="#i-ig"/></svg></a>
 <a href="https://whatsapp.com/channel/0029VabsF6a8V0toOXUZVp3h" target="_blank" rel="noopener" class="soc" aria-label="قناة الواتساب"><svg><use href="#i-wa"/></svg></a>
-<button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
+<button class="hamburger" id="hamburger" aria-label="القائمة" aria-expanded="false">☰</button>
 </div>
 </div>
 </header>
@@ -266,19 +278,25 @@ section{padding:70px 0}
 <button class="top" id="top" aria-label="العودة للأعلى"><svg class="ic"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
 <script>
-/* ===== الإعدادات ===== */
-const CLOUD_NAME = 'lqibffwn';            // تأكد منه: Cloudinary > Settings > API Keys
+/* ===== الإعدادات (غيّر هذه القيم فقط) ===== */
+const CLOUD_NAME = 'lqibffwn';
 const UPLOAD_PRESET = 'kafrshams_ads';
-const WEBHOOK_URL = 'https://hook.eu1.make.com/s08cgtvs6cguzt0zeacxrihld9fl4i8c';
+/* رابط الـ Webhook الخاص بسيناريو الاستقبال (Ads intake) */
+const WEBHOOK_URL = 'https://hook.eu1.make.com/6qigsxd446jzbqt81zc8f5sy22oetg6j';
 const MAX_IMAGES = 10, MAX_VIDEO_MB = 100, MIN_FILL_SECONDS = 4;
 
 const $ = id => document.getElementById(id);
 const loadedAt = Date.now();
 
 /* القائمة والأسئلة والعودة للأعلى */
-const navLinks = $('navLinks');
-$('hamburger').onclick = () => navLinks.classList.toggle('on');
-navLinks.querySelectorAll('a').forEach(a => a.onclick = () => navLinks.classList.remove('on'));
+const navLinks = $('navLinks'), burger = $('hamburger');
+function setMenu(open) {
+  navLinks.classList.toggle('on', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  burger.textContent = open ? '✕' : '☰';
+}
+burger.onclick = () => setMenu(!navLinks.classList.contains('on'));
+navLinks.querySelectorAll('a').forEach(a => a.onclick = () => setMenu(false));
 document.querySelectorAll('.fi').forEach(item => {
   item.querySelector('.fh').onclick = () => {
     const open = item.classList.contains('on');
@@ -338,6 +356,7 @@ function upload(file, type, onProgress) {
 form.addEventListener('submit', async e => {
   e.preventDefault();
   if ($('website').value) return;                                   // بوت
+  if (!/^https:\/\/hook\./.test(WEBHOOK_URL)) { alert('لم يتم ضبط رابط الإرسال بعد. تواصل مع إدارة الموقع.'); return; }
   if ((Date.now() - loadedAt) / 1000 < MIN_FILL_SECONDS) { alert('يرجى المحاولة مرة أخرى بعد لحظات.'); return; }
 
   const images = [...$('images').files], video = $('video').files[0];
