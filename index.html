@@ -70,8 +70,13 @@ section{padding:90px 0}
 .sc p{color:var(--mu);font-size:.95rem}
 /* map */
 .mc{max-width:500px;margin:0 auto;background:var(--card);padding:40px;border-radius:24px;border:1px solid var(--bd);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
-.mp{width:220px;height:220px;border-radius:50%;overflow:hidden;border:5px solid var(--s);display:block}
-.mp img{width:100%;height:100%;object-fit:cover;transition:.3s}.mp:hover img{transform:scale(1.1)}
+.mp{position:relative;width:260px;height:260px;border-radius:50%;overflow:hidden;border:5px solid var(--s);background:var(--pl);flex-shrink:0}
+.mp iframe{position:absolute;width:170%;height:170%;top:-35%;left:-35%;border:0;pointer-events:none}
+.mpl{position:absolute;inset:0;z-index:2}
+.mf{width:100%;text-align:right;display:grid;gap:10px;margin:4px 0}
+.mf li{background:var(--pl);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.mb{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.tip{font-size:.88rem;color:var(--mu)}
 /* faq */
 .faq{max-width:800px;margin:0 auto}
 .fi{background:var(--card);border:1px solid var(--bd);border-radius:8px;margin-bottom:15px;overflow:hidden}
@@ -119,6 +124,25 @@ section{padding:90px 0}
 .pt{height:10px;background:var(--bd);border-radius:6px;overflow:hidden}
 .pr{height:100%;width:0;background:var(--p);transition:width .2s}
 .px{display:block;margin-top:8px;font-size:.9rem;color:var(--mu);text-align:center}
+.tl ul.tm{margin:10px 0 0;padding-right:20px;list-style:disc;color:var(--mu)}
+.tl ul.tm li{margin-bottom:6px}
+.tl ul.tm b{color:var(--p)}
+.pay .cashbtn{display:block;text-align:center;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:10px;font-weight:700;margin-top:12px}
+.pay .cashbtn:hover{background:var(--s);color:var(--p)}
+/* gallery + payment */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:14px}
+.gi{padding:0;border:0;border-radius:var(--r);overflow:hidden;cursor:pointer;background:var(--pl);aspect-ratio:4/3}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}.gi:hover img{transform:scale(1.06)}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;border-radius:8px}
+.lbx{position:absolute;top:16px;left:16px;width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:#000;font-size:1.2rem;cursor:pointer}
+.pay{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px;margin:0 0 22px}
+.pay h4{font-size:1.05rem;margin-bottom:8px}
+.pay p{color:#E2E8F0;font-size:.92rem;margin-bottom:10px}
+.pay .qr{width:190px;max-width:100%;background:#fff;padding:8px;border-radius:10px;display:block;margin:10px auto}
+.pay .qrsoon{border:2px dashed rgba(255,255,255,.4);border-radius:10px;padding:18px;text-align:center;font-size:.9rem;margin:10px 0}
+.pay button{background:var(--s);color:var(--p);border:none;border-radius:8px;padding:10px 18px;font:700 .95rem 'Tajawal',sans-serif;cursor:pointer;display:block;margin:8px auto 0}
 /* floating + footer */
 .wa{position:fixed;bottom:35px;right:30px;background:#25D366;color:#fff;border-radius:50px;padding:12px 22px;display:flex;align-items:center;gap:10px;font-weight:700;box-shadow:0 10px 25px rgba(37,211,102,.4);z-index:999;transition:.3s}
 .wa:hover{background:#1EBE5D;transform:translateY(-4px)}
@@ -134,7 +158,10 @@ footer{background:var(--card);border-top:1px solid var(--bd);padding:60px 0 25px
 .nav .c{height:70px;padding:0 14px}
 .logo{font-size:1.05rem;gap:8px;min-width:0}
 .logo img{width:36px;height:36px}
-.acts .soc{display:none}
+.acts{gap:6px}
+.soc{width:30px;height:30px}
+.soc svg{width:14px;height:14px}
+.mp{width:220px;height:220px}
 .hamburger{display:block;font-size:1.8rem;padding:8px 12px}
 .links{position:fixed;top:70px;right:0;left:0;width:100%;height:auto;max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;background:var(--card);flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 30px;transform:translateY(-10px);opacity:0;visibility:hidden;transition:transform .25s,opacity .25s,visibility .25s;box-shadow:0 10px 25px rgba(0,0,0,.12)}
 .links.on{transform:none;opacity:1;visibility:visible}
@@ -151,6 +178,7 @@ section{padding:60px 0}
 .fc2{font-size:16px}
 .mc{padding:28px 20px}
 }
+@media(max-width:400px){.logo span{font-size:.92rem}.logo img{width:30px;height:30px}.soc{width:28px;height:28px}.nav .c{padding:0 10px}.hamburger{padding:6px 8px}}
 </style>
 </head>
 <body>
@@ -173,6 +201,7 @@ section{padding:60px 0}
 <li><a href="#about">عن كفرشمس</a></li>
 <li><a href="#history">تاريخ البلدة</a></li>
 <li><a href="#services">خدمات الإعلانات</a></li>
+<li id="navGallery" hidden><a href="#gallery">صور البلدة</a></li>
 <li><a href="#map">موقع البلدة</a></li>
 <li><a href="#faq">الأسئلة الشائعة</a></li>
 <li><a href="#contact">أرسل إعلانك</a></li>
@@ -214,21 +243,17 @@ section{padding:60px 0}
 <div class="c">
 <div class="sh"><h2>كفرشمس عبر التاريخ</h2><p>نبذة مبنية على مصادر منشورة عن بلدتنا وتاريخها ومسيرتها في الثورة السورية</p></div>
 <div class="tl">
-<div class="it2"><span class="yr">📍 الموقع</span><p>تتبع كفرشمس إداريًا لمنطقة الصنمين في محافظة درعا، وتقع شمال غرب مدينة الصنمين بين دمشق ودرعا، شرق الجولان، وتُعدّ من منطقة الجيدور. بلغ عدد سكانها 12,435 نسمة بحسب تعداد عام 2004.</p></div>
-<div class="it2"><span class="yr">🏺 الجذور القديمة</span><p>تذكر المراجع التاريخية ازدهارًا عمرانيًا في العهد البيزنطي، ودير بناه الغساسنة نحو عام 570م. وفي عام 1838 سُجّلت قرية في ناحية الجيدور، ووصف الباحث الألماني غوتليب شوماخر عام 1897 آثارها وأقواسها الجوفية، وذكر أن ديرين غسانيين فيها كانا شبه سليمين.</p></div>
-<div class="it2"><span class="yr">1973</span><p>كانت كفرشمس ساحة مواجهات بين الجيش الإسرائيلي والقوات العربية المشتركة (السورية والعراقية والأردنية) في حرب تشرين.</p></div>
-<div class="it2"><span class="yr">آذار 2011</span><p>بدأت الاحتجاجات في درعا يوم 18 آذار 2011 بعد صلاة الجمعة، وسقط فيها أول الشهداء حسام عياش ومحمود الجوابرة. وفي 23 آذار اقتحمت قوات النظام الجامع العمري في درعا البلد، فخرج أهالي الأرياف في مسيرات تضامن سُمّيت «فزعة أهل حوران». ووثّقت هيومن رايتس ووتش مقتل أكثر من 30 متظاهرًا بين 23 و25 آذار. ومنذ ذلك الوقت صارت درعا «مهد الثورة السورية».</p></div>
-<div class="it2"><span class="yr">2011 - 2012</span><p>شارك كثير من أهالي كفرشمس في المظاهرات المناهضة للنظام منذ الأشهر الأولى للثورة، وبقيت البلدة من بلدات الريف الشمالي الحاضرة في الحراك الشعبي.</p></div>
-<div class="it2"><span class="yr">حزيران - تموز 2012</span><p>تعرضت البلدة لحملة قصف واقتحام من قوات النظام في أواخر حزيران 2012، وتحدثت مصادر الناشطين عن سقوط شهداء ودمار في المنازل والمرافق (وتتفاوت الأرقام بين المصادر). وفي 5 تموز 2012 وثّقت «الذاكرة السورية» اقتحام قوات النظام للبلدة وإحراق منازل وسيارات ودراجات نارية وشن حملة اعتقالات.</p></div>
-<div class="it2"><span class="yr">نيسان 2015</span><p>نقلت قناة الجزيرة أن فصائل المعارضة أحكمت سيطرتها على مدينة كفرشمس في ريف درعا الشمالي، ضمن معارك الوصول إلى أطراف الصنمين.</p></div>
-<div class="it2"><span class="yr">حزيران 2018</span><p>تعرضت البلدة لقصف مدفعي من قوات النظام أودى بحياة مدني، وذلك خلال الحملة العسكرية على الجنوب السوري. ووثّقت الشبكة السورية لحقوق الإنسان قصف مسجد أسامة بن زيد في البلدة يوم 15 حزيران 2018 وتضرر مبناه وأثاثه.</p></div>
-<div class="it2"><span class="yr">تموز 2018</span><p>خضعت محافظة درعا لاتفاق «تسوية» برعاية روسية بعد حملة عسكرية، ونزح من المحافظة نحو 234 ألف شخص بحسب إحصائية نقلتها صحيفة عنب بلدي.</p></div>
-<div class="it2"><span class="yr">أيلول 2018</span><p>بعد اتفاق التسوية، نقلت عنب بلدي أن قوات النظام شنّت حملة اعتقالات تركزت في كفرشمس والقرى المحيطة بها.</p></div>
-<div class="it2"><span class="yr">6 - 7 كانون الأول 2024</span><p>خرجت مدينة درعا ومعظم المحافظة عن سيطرة النظام مع إطلاق «غرفة عمليات الجنوب» عملية «كسر القيود»، قبل التقدم نحو دمشق.</p></div>
-<div class="it2"><span class="yr">8 كانون الأول 2024</span><p>سقط نظام بشار الأسد بعد وصول «إدارة العمليات العسكرية» و«غرفة عمليات الجنوب» إلى دمشق، وانتهت بذلك أكثر من 13 عامًا من الصراع وحقبة طويلة من حكم آل الأسد.</p></div>
+<div class="it2"><span class="yr">🏺 التاريخ القديم</span><p>تقع كفرشمس في منطقة الجيدور بين دمشق ودرعا. تذكر المراجع أنها شهدت ازدهارًا عمرانيًا في العهد البيزنطي، ثم دخلت في نفوذ الغساسنة الذين بنوا فيها ديرًا رئيسيًا نحو عام 570م. ووصف الباحث الألماني غوتليب شوماخر آثارها وأقواسها الجوفية وديريها الغسانيين اللذين كانا شبه سليمين في زمنه.</p></div>
+<div class="it2"><span class="yr">🌿 التاريخ المعاصر والثورة</span><p>شاركت كفرشمس في الثورة السورية منذ بدايتها بعد انطلاقها من درعا في آذار 2011، وقدّمت أبناءها شهداء كثرًا في المظاهرات والقصف والمعارك على مدى سنوات الثورة. ومن أبرز محطاتها:</p>
+<ul class="tm">
+<li><b>صيف 2012:</b> حملة قصف واقتحام من قوات النظام أُحرقت خلالها منازل وسيارات وشُنّت اعتقالات.</li>
+<li><b>شباط وآذار 2015:</b> اشتباكات عنيفة في محيط البلدة ضمن هجوم قوات النظام على ريف درعا الشمالي.</li>
+<li><b>7 نيسان 2015:</b> سيطرة فصائل المعارضة على حواجز النظام في البلدة وإعلانها السيطرة الكاملة عليها.</li>
+<li><b>6 - 8 كانون الأول 2024:</b> خرجت درعا من سيطرة النظام وانطلقت «غرفة عمليات الجنوب» نحو دمشق، وسقط نظام بشار الأسد يوم 8 كانون الأول بعد أكثر من 13 عامًا من الصراع.</li>
+</ul></div>
 </div>
 <div class="note"><b>شاركنا ذاكرة البلدة:</b> هذه النبذة اعتمدت على ما وُثّق في المصادر المنشورة. وإن كانت لديك معلومة موثّقة أو صورة أو قصة عن كفرشمس وأهلها وشهدائها، فأرسلها لنا عبر <a href="https://wa.me/963994882752" target="_blank" rel="noopener" style="color:var(--p);font-weight:700;text-decoration:underline">واتساب</a> لنضيفها بعد التحقق.</div>
-<p class="src">المصادر: الجزيرة نت (7 نيسان 2015)، <a href="https://www.hrw.org/reports/2011/06/01/we-ve-never-seen-such-horror" target="_blank" rel="noopener">هيومن رايتس ووتش</a>، <a href="https://www.enabbaladi.net/732208/" target="_blank" rel="noopener">عنب بلدي (سقوط النظام)</a>، <a href="https://www.enabbaladi.net/515982/" target="_blank" rel="noopener">عنب بلدي (تسوية 2018)</a>، <a href="https://news.snhr.org/?p=61556" target="_blank" rel="noopener">الشبكة السورية لحقوق الإنسان</a>، <a href="https://syrianmemory.org/daily-events/event/5eb6d5120e607900012dab4e" target="_blank" rel="noopener">الذاكرة السورية (5 تموز 2012)</a>، <a href="https://www.enabbaladi.net/559010/" target="_blank" rel="noopener">عنب بلدي (أحداث آذار 2011 في درعا)</a>، <a href="https://news.snhr.org/?p=61484" target="_blank" rel="noopener">الشبكة السورية (قصف المسجد 2018)</a>، <a href="https://www.enabbaladi.net/254809/" target="_blank" rel="noopener">عنب بلدي (اعتقالات أيلول 2018)</a>، <a href="https://arabicpost.net/تقارير-خاصة/2024/12/07/غرفة-عمليات-الجنوب-سوريا/" target="_blank" rel="noopener">عربي بوست (غرفة عمليات الجنوب)</a>، ويكيبيديا (مقالة Kafr Shams).</p>
+<p class="src">المصادر: <a href="https://ar.wikipedia.org/wiki/%D9%83%D9%81%D8%B1_%D8%B4%D9%85%D8%B3" target="_blank" rel="noopener">ويكيبيديا (كفر شمس)</a>، <a href="https://syrianmemory.org/daily-events/event/5eb6d5120e607900012dab4e" target="_blank" rel="noopener">الذاكرة السورية (5 تموز 2012)</a>، <a href="https://ar.wikipedia.org/wiki/%D9%87%D8%AC%D9%88%D9%85_%D8%AC%D9%86%D9%88%D8%A8_%D8%B3%D9%88%D8%B1%D9%8A%D8%A7_2015" target="_blank" rel="noopener">هجوم جنوب سوريا 2015</a>، <a href="https://www.emaratalyoum.com/politics/issues/syria-latest/2015-04-08-1.772964" target="_blank" rel="noopener">الإمارات اليوم (8 نيسان 2015)</a>، <a href="https://arabicpost.net/%d8%aa%d9%82%d8%a7%d8%b1%d9%8a%d8%b1-%d8%ae%d8%a7%d8%b5%d8%a9/2024/12/07/%d8%ba%d8%b1%d9%81%d8%a9-%d8%b9%d9%85%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d8%ac%d9%86%d9%88%d8%a8-%d8%b3%d9%88%d8%b1%d9%8a%d8%a7/" target="_blank" rel="noopener">عربي بوست (7 كانون الأول 2024)</a>، <a href="https://www.enabbaladi.net/732208/" target="_blank" rel="noopener">عنب بلدي (سقوط النظام)</a>.</p>
 </div>
 </section>
 
@@ -242,13 +267,31 @@ section{padding:60px 0}
 </div></div>
 </section>
 
+<section id="gallery" class="alt" hidden>
+<div class="c"><div class="sh"><h2>صور من كفرشمس</h2><p>لقطات من بلدتنا وأهلها</p></div>
+<div class="gal" id="galGrid"></div></div>
+</section>
+<div class="lb" id="lb" hidden><button class="lbx" id="lbx" type="button" aria-label="إغلاق">✕</button><img id="lbImg" alt="صورة من كفرشمس"></div>
+
 <section id="map">
 <div class="c">
-<div class="sh"><h2>موقع بلدة كفرشمس</h2><p>قلب حوران النابض بالحياة والتاريخ</p></div>
+<div class="sh"><h2>موقع بلدة كفرشمس</h2><p>في قلب الجيدور، بين دمشق ودرعا</p></div>
 <div class="mc">
-<a href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" rel="noopener" class="mp" aria-label="خريطة كفرشمس"><img src="https://i.ibb.co/gZvcW5xn/702569909-1384405190376265-46058633433344339-n.jpg" alt="كفرشمس"></a>
+<div class="mp">
+<iframe src="https://maps.google.com/maps?q=Kafr+Shams+Syria&amp;t=k&amp;z=14&amp;output=embed" title="صورة جوية لبلدة كفرشمس" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+<a class="mpl" href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" rel="noopener" aria-label="افتح كفرشمس في خرائط جوجل"></a>
+</div>
 <h3>كفرشمس، درعا، سوريا</h3>
-<p style="color:var(--mu)">انقر على الصورة لعرض الموقع واتجاهات الطرق في خرائط جوجل.</p>
+<ul class="mf">
+<li>📍 تتبع إداريًا لمنطقة الصنمين في محافظة درعا.</li>
+<li>🧭 تبعد نحو 16 كم شمال غرب مدينة الصنمين، شرق الجولان.</li>
+<li>⛰️ ترتفع نحو 800 م عن سطح البحر.</li>
+</ul>
+<div class="mb">
+<a class="btn bp" href="https://maps.google.com/?q=Kafr+Shams+Syria" target="_blank" rel="noopener">📌 افتح الموقع على الخريطة</a>
+<a class="btn bs" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kafr+Shams+Syria" target="_blank" rel="noopener">🚗 الاتجاهات من موقعي</a>
+</div>
+<p class="tip">هل أنت خارج البلدة؟ اضغط «الاتجاهات من موقعي» وسيحسب لك خرائط جوجل الطريق من مكانك الحالي. وإن كنت داخلها فافتح الموقع لتحديد المكان بدقة. تأكد من حالة الطرق قبل السفر.</p>
 </div></div>
 </section>
 
@@ -262,10 +305,10 @@ section{padding:60px 0}
 <div class="fc"><p>يصل إعلانك إلى الإدارة للمراجعة، وفور اعتماده يُنشر تلقائيًا على صفحة "كفرشمس الآن".</p></div></div>
 <div class="fi"><button class="fh"><span>هل خدمة النشر مجانية؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
 <div class="fc"><p>أغلب الإعلانات المجتمعية والإخبارية مجانية دعمًا لأهالي البلدة، وللاستفسار عن الإعلانات المميزة تواصل معنا مباشرة.</p></div></div>
-<div class="fi"><button class="fh"><span>هل أستطيع إرسال صور وفيديو معًا؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
-<div class="fc"><p>في الإعلان الواحد اختر صورًا أو فيديو، لأن فيسبوك لا يسمح بنشرهما في منشور واحد. وإن أردت الاثنين فأرسل إعلانين، أو أرسل الفيديو لنا عبر واتساب.</p></div></div>
 <div class="fi"><button class="fh"><span>عندي أكثر من فيديو أو الفيديو أكبر من 100 ميغابايت، ماذا أفعل؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
 <div class="fc"><p>أرسلها لنا عبر واتساب من الزر الأخضر في الصفحة وسنتولى نشرها.</p></div></div>
+<div class="fi"><button class="fh"><span>كيف أدفع ثمن الإعلان المميز؟</span><svg class="ic"><use href="#i-dn"/></svg></button>
+<div class="fc"><p>عندك طريقتان: (1) «شام كاش»: في قسم «أرسل إعلانك أو تواصل معنا» ستجد رمز QR، امسحه أو احفظه وأرسل المبلغ المتفق عليه، ثم أرسل لنا صورة الإيصال عبر واتساب. (2) نقدًا: تواصل مع مسؤول الإعلانات عبر واتساب وادفع المبلغ كاش.</p></div></div>
 </div></div>
 </section>
 
@@ -279,6 +322,14 @@ section{padding:60px 0}
 <p style="margin-bottom:30px;color:#E2E8F0">نحن في خدمة أهالي كفرشمس. تواصل معنا لأي استفسار أو مقترح.</p>
 <div class="it"><h4>البريد الإلكتروني</h4><p>info@kafrshams.now</p></div>
 <div class="it"><h4>العنوان</h4><p>درعا - كفرشمس، سوريا</p></div>
+</div>
+<div class="pay">
+<h4>💳 طرق الدفع للإعلانات المميزة</h4>
+<p>للإعلانات المميزة عندك طريقتان: <b>1) شام كاش:</b> امسح رمز QR أو احفظه (اضغط مطولًا على الصورة)، وأرسل المبلغ المتفق عليه، ثم أرسل لنا صورة الإيصال عبر واتساب. <b>2) نقدًا:</b> تواصل مع مسؤول الإعلانات وادفع المبلغ كاش. الإعلانات المجتمعية العادية لا تحتاج دفعًا.</p>
+<img id="shamQR" class="qr" alt="رمز QR لحساب شام كاش" hidden>
+<div id="qrSoon" class="qrsoon">رمز QR سيُضاف هنا قريبًا</div>
+<button type="button" id="copyAcc" hidden>نسخ رقم الحساب</button>
+<a class="cashbtn" href="https://wa.me/963994882752?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AF%D9%81%D8%B9%20%D8%AB%D9%85%D9%86%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%20%D9%85%D9%85%D9%8A%D8%B2%20%D9%86%D9%82%D8%AF%D9%8B%D8%A7" target="_blank" rel="noopener">💵 الدفع نقدًا: تواصل مع مسؤول الإعلانات</a>
 </div>
 <div class="sl">
 <a href="https://www.facebook.com/gaalii1920/" target="_blank" rel="noopener">فيسبوك</a>
@@ -309,7 +360,7 @@ section{padding:60px 0}
 <label class="opt"><input type="radio" name="mt" value="images"><span>🖼️ صور</span></label>
 <label class="opt"><input type="radio" name="mt" value="video"><span>🎬 فيديو</span></label>
 </div>
-<small class="hint">اختر <b>صورًا أو فيديو</b> في الإعلان الواحد، لأن فيسبوك لا يسمح بنشرهما معًا في منشور واحد. وإن أردت الاثنين فأرسل إعلانين منفصلين: أحدهما للصور والآخر للفيديو.</small></div>
+<small class="hint">اختر <b>صورًا أو فيديو</b> في الإعلان الواحد. وإن أردت الاثنين فأرسل إعلانين منفصلين: أحدهما للصور والآخر للفيديو.</small></div>
 <div class="fg" id="boxImages" hidden><label for="images">صور الإعلان</label><input type="file" id="images" class="fc2" accept="image/*" multiple><small class="hint">حتى 20 صورة، وستُنشر كما هي مع الإعلان.</small></div>
 <div class="fg" id="boxVideo" hidden><label for="video">فيديو الإعلان</label><input type="file" id="video" class="fc2" accept="video/*"><small class="hint">فيديو واحد فقط حتى 100 ميغابايت، وسيُنشر كما هو. إذا كان فيديوك أكبر، أو عندك عدة فيديوهات، <a href="https://wa.me/963994882752" target="_blank" rel="noopener" style="color:var(--p);font-weight:700;text-decoration:underline">أرسلها لنا عبر واتساب</a>.</small></div>
 <div class="hp" aria-hidden="true"><label for="website">اتركه فارغًا</label><input type="text" id="website" tabindex="-1" autocomplete="off"></div>
@@ -338,6 +389,17 @@ const CLOUD_NAME = 'lqibffwn';
 const UPLOAD_PRESET = 'kafrshams_ads';
 /* رابط الـ Webhook الخاص بسيناريو الاستقبال (Ads intake) */
 const WEBHOOK_URL = 'https://hook.eu1.make.com/6qigsxd446jzbqt81zc8f5sy22oetg6j';
+/* رابط صورة QR الخاصة بحساب شام كاش، ورقم الحساب (اختياري) */
+const SHAM_QR_URL = '';
+const SHAM_ACCOUNT = '';
+/* روابط صور البلدة لمعرض الصور (رابط بين علامتي اقتباس، تفصل بينها فاصلة) */
+const GALLERY_IMAGES = [
+  'https://i.ibb.co/5h3vBPjV/151835261-4232202530127204-1556384445950969202-n.jpg',
+  'https://i.ibb.co/7N8nF1dy/490282274-24032839582970205-3763014942639953907-n.jpg',
+  'https://i.ibb.co/nMYS4g43/483961504-1045831407566980-905811826123881682-n.jpg',
+  'https://i.ibb.co/xtXr5zSR/484649414-1048412620642192-924841885796921824-n.jpg',
+  'https://i.ibb.co/KcFzYFHR/702569909-1384405190376265-46058633433344339-n.jpg'
+];
 const MAX_IMAGES = 20, MAX_VIDEOS = 1, MAX_VIDEO_MB = 100, MIN_FILL_SECONDS = 4;
 
 const $ = id => document.getElementById(id);
@@ -362,12 +424,51 @@ document.querySelectorAll('.fi').forEach(item => {
 window.addEventListener('scroll', () => $('top').classList.toggle('v', scrollY > 300));
 $('top').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
+/* معرض الصور */
+const cl = (u, t) => u.includes('/upload/') ? u.replace('/upload/', '/upload/' + t + '/') : u;
+(function () {
+  if (!GALLERY_IMAGES.length) return;
+  $('gallery').hidden = false; $('navGallery').hidden = false;
+  const close = () => { $('lb').hidden = true; $('lbImg').removeAttribute('src'); document.body.style.overflow = ''; };
+  GALLERY_IMAGES.forEach((u, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'gi';
+    b.setAttribute('aria-label', 'عرض الصورة ' + (i + 1));
+    const im = document.createElement('img'); im.loading = 'lazy'; im.alt = 'صورة من كفرشمس'; im.src = cl(u, 'f_auto,q_auto,w_700');
+    b.appendChild(im);
+    b.onclick = () => { $('lbImg').src = cl(u, 'f_auto,q_auto,w_1600'); $('lb').hidden = false; document.body.style.overflow = 'hidden'; };
+    $('galGrid').appendChild(b);
+  });
+  $('lb').onclick = close;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+
+/* الدفع عبر شام كاش */
+(function () {
+  if (SHAM_QR_URL) { $('shamQR').src = SHAM_QR_URL; $('shamQR').hidden = false; $('qrSoon').hidden = true; }
+  if (SHAM_ACCOUNT) {
+    $('copyAcc').hidden = false;
+    $('copyAcc').onclick = async () => {
+      try { await navigator.clipboard.writeText(SHAM_ACCOUNT); $('copyAcc').textContent = 'تم النسخ ✓'; }
+      catch (e) { prompt('انسخ رقم الحساب:', SHAM_ACCOUNT); }
+    };
+  }
+})();
+
 /* ===== رفع الإعلان ===== */
 const form = $('adForm'), sendBtn = $('sendBtn');
 const mediaType = () => document.querySelector('input[name=mt]:checked').value;
 function syncMedia() { $('boxImages').hidden = mediaType() !== 'images'; $('boxVideo').hidden = mediaType() !== 'video'; }
 document.querySelectorAll('input[name=mt]').forEach(r => r.addEventListener('change', syncMedia));
 $('message').addEventListener('input', e => $('cnt').textContent = e.target.value.length + ' / 1200');
+
+/* تحويل رقم الهاتف لصيغة دولية صالحة لروابط واتساب (سوريا 963) */
+function waNumber(raw) {
+  let d = (raw || '').replace(/[٠-٩]/g, c => c.charCodeAt(0) - 1632).replace(/[۰-۹]/g, c => c.charCodeAt(0) - 1776).replace(/\D/g, '');
+  if (d.startsWith('00')) d = d.slice(2);
+  else if (d.startsWith('0')) d = '963' + d.slice(1);
+  else if (d.length === 9 && d.startsWith('9')) d = '963' + d;
+  return d;
+}
 
 function setProgress(p, text) {
   $('pb').style.display = 'block';
@@ -456,6 +557,13 @@ for (let i = 0; i < videos.length; i++) {
     data.append('message', $('message').value);
     data.append('images', imageUrls.join(','));
     data.append('video', videoUrls.join(','));
+    data.append('images_lines', imageUrls.join('\n'));   // كل رابط في سطر (لرسالة تليجرام)
+    data.append('tg_media', imageUrls.length ? JSON.stringify(imageUrls.slice(0, 10).map(u => ({ type: 'photo', media: u }))) : '');
+
+    const num = waNumber($('phone').value);
+    const waMsg = 'مرحبًا ' + $('name').value + '، تم اعتماد إعلانك ونشره على صفحة «كفرشمس الآن» ✅ شكرًا لثقتك بنا.';
+    data.append('phone_wa', num);                                           // الرقم الدولي بدون +
+    data.append('wa_link', 'https://wa.me/' + num + '?text=' + encodeURIComponent(waMsg)); // رابط جاهز لإبلاغ العميل بالنشر
 
     const res = await fetch(WEBHOOK_URL, { method: 'POST', body: data });
     if (!res.ok) throw new Error('تعذر إرسال الإعلان، حاول مرة أخرى.');
